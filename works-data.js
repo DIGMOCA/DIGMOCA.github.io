@@ -25,6 +25,14 @@ const works = [
   },
 
     {
+    title: "くるくる",
+    date: "2023-10-30",
+    categories: ["animation"],
+    image: "images/animation_1.jpg",
+    page: "works/animation_1.html"
+  },
+
+    {
     title: "MIZU・UMI / 東北きりたん",
     date: "2022-10-08",
     categories: ["music"],
