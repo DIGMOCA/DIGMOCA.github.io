@@ -281,3 +281,31 @@ footer {
   }
 
 }
+
+
+.series-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 32px;
+}
+
+.series-filter-button {
+  padding: 4px 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 13px;
+  color: #777;
+  cursor: pointer;
+}
+
+.series-filter-button:hover {
+  color: #111;
+}
+
+.series-filter-button.active {
+  color: #111;
+  font-weight: bold;
+  border-bottom: 1px solid #111;
+}
