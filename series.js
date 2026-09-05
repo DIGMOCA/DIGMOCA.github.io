@@ -233,24 +233,6 @@ function renderSeries() {
     section.appendChild(heading);
 
 
-    // 「未分類」であることを
-    // 閲覧者に明示する説明文
-    if (seriesName === "未分類") {
-
-      const note =
-        document.createElement("p");
-
-      note.className =
-        "series-unclassified-note";
-
-      note.textContent =
-        "特定のシリーズに属していない作品です。";
-
-      section.appendChild(note);
-
-    }
-
-
     const list =
       document.createElement("div");
 
