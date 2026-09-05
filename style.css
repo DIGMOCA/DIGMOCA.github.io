@@ -463,13 +463,11 @@ footer {
 
 .work-nav-context {
   margin-top: 64px;
-  margin-bottom: 12px;
+  padding-top: 20px;
+  text-align: center;
   font-size: 14px;
   font-weight: bold;
-}
-
-.work-nav-context + .work-navigation {
-  margin-top: 0;
+  border-top: 1px solid #ddd;
 }
 
 .work-nav-context a {
@@ -479,4 +477,23 @@ footer {
 
 .work-nav-context a:hover {
   text-decoration: underline;
+}
+
+.work-nav-context + .work-navigation {
+  margin-top: 16px;
+  padding-top: 0;
+  border-top: none;
+}
+
+.work-navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+
+  margin-top: 64px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
