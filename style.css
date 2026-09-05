@@ -11,6 +11,9 @@ body {
     "Hiragino Kaku Gothic ProN",
     "Yu Gothic",
     sans-serif;
+   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   color: #111;
   background: #fff;
@@ -45,6 +48,7 @@ nav a {
 
 main {
   padding: 40px 0;
+   flex: 1;
 }
 
 h2 {
