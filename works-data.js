@@ -18,7 +18,7 @@ const works = [
 
   {
     title: "【無色透名美術館】黄昏に染まる",
-    date: "2026-05-2",
+    date: "2026-05-02",
     categories: ["illustration"],
     image: "images/musyokutoumei3_3.jpg",
     page: "works/musyokutoumei3_3.html"
