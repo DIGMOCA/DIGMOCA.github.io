@@ -461,22 +461,22 @@ footer {
 
 }
 
-.work-nav-series {
+.work-nav-context {
   margin-top: 64px;
   margin-bottom: 12px;
   font-size: 14px;
   font-weight: bold;
 }
 
-.work-nav-series + .work-navigation {
+.work-nav-context + .work-navigation {
   margin-top: 0;
 }
 
-.work-nav-series a {
+.work-nav-context a {
   color: inherit;
   text-decoration: none;
 }
 
-.work-nav-series a:hover {
+.work-nav-context a:hover {
   text-decoration: underline;
 }
