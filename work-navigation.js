@@ -139,42 +139,41 @@ const seriesHTML =
     : "";
 
 
-  const previousHTML =
-    previousWork
-      ? `
-        <a
-          class="work-nav-link work-nav-previous"
-          href="${previousURL}"
-        >
-          <span class="work-nav-label">
-            ← 前の作品
-          </span>
+const nextHTML =
+  nextWork
+    ? `
+      <a
+        class="work-nav-link work-nav-next"
+        href="${nextURL}"
+      >
+        <span class="work-nav-label">
+          次の作品 →
+        </span>
 
-          <span class="work-nav-title">
-            ${previousWork.title}
-          </span>
-        </a>
-      `
-      : `<div></div>`;
+        <span class="work-nav-title">
+          ${nextWork.title}
+        </span>
+      </a>
+    `
+    : `<div></div>`;
 
+const previousHTML =
+  previousWork
+    ? `
+      <a
+        class="work-nav-link work-nav-previous"
+        href="${previousURL}"
+      >
+        <span class="work-nav-label">
+          ← 前の作品
+        </span>
 
-  const nextHTML =
-    nextWork
-      ? `
-        <a
-          class="work-nav-link work-nav-next"
-          href="${nextURL}"
-        >
-          <span class="work-nav-label">
-            次の作品 →
-          </span>
-
-          <span class="work-nav-title">
-            ${nextWork.title}
-          </span>
-        </a>
-      `
-      : `<div></div>`;
+        <span class="work-nav-title">
+          ${previousWork.title}
+        </span>
+      </a>
+    `
+    : `<div></div>`;
 
 
   navigation.innerHTML = `
