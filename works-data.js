@@ -14,7 +14,7 @@ const works = [
     categories: ["illustration"],
     image: "images/musyokutoumei3_4.jpg",
     page: "works/musyokutoumei3_4.html"
-  }
+  },
 
   {
     title: "【無色透名美術館】黄昏に染まる",
