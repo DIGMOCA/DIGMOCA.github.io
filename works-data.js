@@ -35,7 +35,7 @@ const works = [
     title: "くるくる",
     date: "2023-10-30",
     categories: ["animation"],
-    series: [""],
+    series: ["未分類"],
     image: "images/animation_1.jpg",
     page: "works/animation_1.html"
   },
