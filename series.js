@@ -122,7 +122,20 @@ seriesNames.sort((a, b) => {
 });
 
 
-let currentSeries = "all";
+const params =
+  new URLSearchParams(
+    window.location.search
+  );
+
+const requestedSeries =
+  params.get("series");
+
+
+let currentSeries =
+  requestedSeries &&
+  seriesNames.includes(requestedSeries)
+    ? requestedSeries
+    : "all";
 
 
 // ==============================
