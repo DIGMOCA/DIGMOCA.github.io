@@ -456,3 +456,14 @@ footer {
   }
 
 }
+
+.work-nav-series {
+  margin-top: 64px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.work-nav-series + .work-navigation {
+  margin-top: 0;
+}
