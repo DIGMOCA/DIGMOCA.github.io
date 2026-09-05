@@ -214,37 +214,58 @@ footer {
 }
 
 .series {
-  margin-top: 32px;
+  margin-top: 40px;
 }
 
 .series h3 {
-  margin-top: 40px;
+  margin-top: 48px;
   padding-bottom: 8px;
   border-bottom: 1px solid #ddd;
   font-size: 20px;
 }
 
-.series ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.series-works {
+  width: 100%;
 }
 
-.series li {
-  padding: 12px 0;
+.series-work {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
   border-bottom: 1px solid #eee;
 }
 
-.series a {
+.series-thumbnail {
+  flex: 0 0 180px;
+}
+
+.series-thumbnail img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.series-work-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.series-work-info h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.series-work-info h4 a {
   color: inherit;
   text-decoration: none;
 }
 
-.series a:hover {
+.series-work-info h4 a:hover {
   text-decoration: underline;
 }
 
-.series span {
-  color: #777;
+.series-work-info p {
+  margin: 0;
   font-size: 13px;
+  color: #777;
 }
