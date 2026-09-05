@@ -125,14 +125,18 @@ if (currentIndex !== -1) {
       : null;
 
 
-  const seriesHTML =
-    currentSeries
-      ? `
-        <div class="work-nav-series">
+const seriesHTML =
+  currentSeries
+    ? `
+      <div class="work-nav-series">
+        <a
+          href="../series.html?series=${encodeURIComponent(currentSeries)}"
+        >
           ${currentSeries}
-        </div>
-      `
-      : "";
+        </a>
+      </div>
+    `
+    : "";
 
 
   const previousHTML =
