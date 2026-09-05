@@ -269,3 +269,15 @@ footer {
   font-size: 13px;
   color: #777;
 }
+
+@media (max-width: 600px) {
+
+  .series-work {
+    gap: 12px;
+  }
+
+  .series-thumbnail {
+    flex-basis: 110px;
+  }
+
+}
