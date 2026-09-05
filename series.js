@@ -274,7 +274,7 @@ function renderSeries() {
 
         <a
           class="series-thumbnail"
-          href="${work.page}"
+          href="${work.page}?series=${encodeURIComponent(seriesName)}"
         >
           <img
             src="${work.image}"
@@ -286,7 +286,7 @@ function renderSeries() {
         <div class="series-work-info">
 
           <h4>
-            <a href="${work.page}">
+            <a href="${work.page}?series=${encodeURIComponent(seriesName)}">
               ${work.title}
             </a>
           </h4>
