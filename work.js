@@ -6,7 +6,6 @@ const worksList =
 const filterButtons =
   document.querySelectorAll(".filter-button");
 
-
 const categoryNames = {
   douga: "DOUGA",
   illustration: "ILLUSTRATION",
@@ -17,17 +16,19 @@ const categoryNames = {
   animation: "ANIMATION"
 };
 
-
 function renderWorks() {
+
+  if (!worksList) {
+    return;
+  }
 
   worksList.innerHTML = "";
 
   const sortedWorks =
     [...works].sort((a, b) => {
       return new Date(b.date)
-           - new Date(a.date);
+        - new Date(a.date);
     });
-
 
   sortedWorks.forEach(work => {
 
@@ -38,18 +39,15 @@ function renderWorks() {
       return;
     }
 
-
     const article =
       document.createElement("article");
 
     article.className = "work";
 
-
     const categoryText =
       work.categories
-        .map(category => categoryNames[category])
+        .map(category => categoryNames[category] || category)
         .join(" / ");
-
 
     article.innerHTML = `
       <a href="${work.page}">
@@ -71,13 +69,11 @@ function renderWorks() {
       </p>
     `;
 
-
     worksList.appendChild(article);
 
   });
 
 }
-
 
 filterButtons.forEach(button => {
 
@@ -86,20 +82,16 @@ filterButtons.forEach(button => {
     currentFilter =
       button.dataset.filter;
 
-
     filterButtons.forEach(btn => {
       btn.classList.remove("active");
     });
 
-
     button.classList.add("active");
-
 
     renderWorks();
 
   });
 
 });
-
 
 renderWorks();
