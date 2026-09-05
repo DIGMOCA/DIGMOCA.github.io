@@ -1,6 +1,6 @@
 const seriesData = [
   {
-    name: "ボーカロイド楽曲",
+    name: "VOCALOID楽曲",
     order: 1
   },
   {
