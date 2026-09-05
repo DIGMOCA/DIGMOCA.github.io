@@ -4,6 +4,7 @@ const seriesList =
 const seriesFilters =
   document.getElementById("series-filters");
 
+
 const categoryNames = {
   video: "VIDEO",
   illustration: "ILLUSTRATION",
@@ -15,15 +16,23 @@ const categoryNames = {
 };
 
 
+// ==============================
+// 作品をシリーズごとに分類
+// ==============================
+
 const worksBySeries = {};
 
 works.forEach(work => {
 
-  if (!work.series || work.series.length === 0) {
+  if (!Array.isArray(work.series)) {
     return;
   }
 
   work.series.forEach(seriesName => {
+
+    if (!seriesName) {
+      return;
+    }
 
     if (!worksBySeries[seriesName]) {
       worksBySeries[seriesName] = [];
@@ -36,34 +45,82 @@ works.forEach(work => {
 });
 
 
+// ==============================
+// シリーズの表示順を取得
+// ==============================
+
 const seriesOrderMap = {};
 
 seriesData.forEach(series => {
-  seriesOrderMap[series.name] = series.order;
+
+  seriesOrderMap[series.name] =
+    Number(series.order);
+
 });
 
 
+// works-data.js に実際に存在する
+// 全シリーズを取得
 const seriesNames =
-  Object.keys(worksBySeries)
-    .sort((a, b) => {
+  Object.keys(worksBySeries);
 
-      const orderA =
-        seriesOrderMap[a] ?? 9999;
 
-      const orderB =
-        seriesOrderMap[b] ?? 9999;
+// order順に並べる
+seriesNames.sort((a, b) => {
 
-      if (orderA !== orderB) {
-        return orderA - orderB;
-      }
+  const hasA =
+    Object.prototype.hasOwnProperty.call(
+      seriesOrderMap,
+      a
+    );
 
-      return a.localeCompare(b, "ja");
+  const hasB =
+    Object.prototype.hasOwnProperty.call(
+      seriesOrderMap,
+      b
+    );
 
-    });
+
+  // 両方登録済み
+  if (hasA && hasB) {
+
+    const difference =
+      seriesOrderMap[a] -
+      seriesOrderMap[b];
+
+    if (difference !== 0) {
+      return difference;
+    }
+
+    return a.localeCompare(b, "ja");
+
+  }
+
+
+  // aだけ登録済み
+  if (hasA) {
+    return -1;
+  }
+
+
+  // bだけ登録済み
+  if (hasB) {
+    return 1;
+  }
+
+
+  // 両方未登録
+  return a.localeCompare(b, "ja");
+
+});
 
 
 let currentSeries = "all";
 
+
+// ==============================
+// フィルター作成
+// ==============================
 
 function createFilters() {
 
@@ -110,28 +167,34 @@ function createFilters() {
 
   buttons.forEach(button => {
 
-    button.addEventListener("click", () => {
+    button.addEventListener(
+      "click",
+      () => {
 
-      currentSeries =
-        button.dataset.series;
-
-
-      buttons.forEach(btn => {
-        btn.classList.remove("active");
-      });
+        currentSeries =
+          button.dataset.series;
 
 
-      button.classList.add("active");
+        buttons.forEach(btn => {
+          btn.classList.remove("active");
+        });
 
 
-      renderSeries();
+        button.classList.add("active");
 
-    });
+        renderSeries();
+
+      }
+    );
 
   });
 
 }
 
+
+// ==============================
+// シリーズ一覧表示
+// ==============================
 
 function renderSeries() {
 
@@ -170,62 +233,69 @@ function renderSeries() {
       "series-works";
 
 
-    worksBySeries[seriesName]
-      .sort((a, b) => {
-        return new Date(b.date)
-          - new Date(a.date);
-      })
-      .forEach(work => {
+    const sortedWorks =
+      [...worksBySeries[seriesName]]
+        .sort((a, b) => {
 
-        const item =
-          document.createElement("article");
+          return (
+            new Date(b.date) -
+            new Date(a.date)
+          );
 
-        item.className =
-          "series-work";
+        });
 
 
-        const categoryText =
-          work.categories
-            .map(category =>
-              categoryNames[category] ||
-              category
-            )
-            .join(" / ");
+    sortedWorks.forEach(work => {
+
+      const item =
+        document.createElement("article");
+
+      item.className =
+        "series-work";
 
 
-        item.innerHTML = `
+      const categoryText =
+        work.categories
+          .map(category =>
+            categoryNames[category] ||
+            category
+          )
+          .join(" / ");
 
-          <a
-            class="series-thumbnail"
-            href="${work.page}"
+
+      item.innerHTML = `
+
+        <a
+          class="series-thumbnail"
+          href="${work.page}"
+        >
+          <img
+            src="${work.image}"
+            alt="${work.title}"
+            loading="lazy"
           >
-            <img
-              src="${work.image}"
-              alt="${work.title}"
-              loading="lazy"
-            >
-          </a>
+        </a>
 
-          <div class="series-work-info">
+        <div class="series-work-info">
 
-            <h4>
-              <a href="${work.page}">
-                ${work.title}
-              </a>
-            </h4>
+          <h4>
+            <a href="${work.page}">
+              ${work.title}
+            </a>
+          </h4>
 
-            <p>
-              ${work.date} / ${categoryText}
-            </p>
+          <p>
+            ${work.date} / ${categoryText}
+          </p>
 
-          </div>
+        </div>
 
-        `;
+      `;
 
 
-        list.appendChild(item);
+      list.appendChild(item);
 
-      });
+    });
 
 
     section.appendChild(list);
@@ -237,6 +307,9 @@ function renderSeries() {
 }
 
 
-createFilters();
+// ==============================
+// 初期表示
+// ==============================
 
+createFilters();
 renderSeries();
