@@ -11,16 +11,13 @@ const categoryNames = {
   animation: "ANIMATION"
 };
 
-
 const worksBySeries = {};
-
 
 works.forEach(work => {
 
   if (!work.series || work.series.length === 0) {
     return;
   }
-
 
   work.series.forEach(seriesName => {
 
@@ -34,13 +31,11 @@ works.forEach(work => {
 
 });
 
-
 const seriesNames =
   Object.keys(worksBySeries)
     .sort((a, b) =>
       a.localeCompare(b, "ja")
     );
-
 
 seriesNames.forEach(seriesName => {
 
@@ -58,8 +53,10 @@ seriesNames.forEach(seriesName => {
   section.appendChild(heading);
 
 
-  const ul =
-    document.createElement("ul");
+  const list =
+    document.createElement("div");
+
+  list.className = "series-works";
 
 
   worksBySeries[seriesName]
@@ -69,19 +66,10 @@ seriesNames.forEach(seriesName => {
     })
     .forEach(work => {
 
-      const li =
-        document.createElement("li");
+      const item =
+        document.createElement("article");
 
-
-      const link =
-        document.createElement("a");
-
-      link.href = work.page;
-      link.textContent = work.title;
-
-
-      const span =
-        document.createElement("span");
+      item.className = "series-work";
 
 
       const categoryText =
@@ -92,19 +80,42 @@ seriesNames.forEach(seriesName => {
           .join(" / ");
 
 
-      span.textContent =
-        ` / ${work.date} / ${categoryText}`;
+      item.innerHTML = `
+
+        <a
+          class="series-thumbnail"
+          href="${work.page}"
+        >
+          <img
+            src="${work.image}"
+            alt="${work.title}"
+            loading="lazy"
+          >
+        </a>
+
+        <div class="series-work-info">
+
+          <h4>
+            <a href="${work.page}">
+              ${work.title}
+            </a>
+          </h4>
+
+          <p>
+            ${work.date} / ${categoryText}
+          </p>
+
+        </div>
+
+      `;
 
 
-      li.appendChild(link);
-      li.appendChild(span);
-
-      ul.appendChild(li);
+      list.appendChild(item);
 
     });
 
 
-  section.appendChild(ul);
+  section.appendChild(list);
 
   seriesList.appendChild(section);
 
