@@ -2,6 +2,17 @@ const yearsList =
   document.getElementById("years-list");
 
 
+const categoryNames = {
+  douga: "DOUGA",
+  illustration: "ILLUSTRATION",
+  game: "GAME",
+  manga: "MANGA",
+  ongaku: "ONGAKU",
+  "3dcg": "3DCG",
+  animation: "ANIMATION"
+};
+
+
 const worksByYear = {};
 
 
@@ -10,9 +21,11 @@ works.forEach(work => {
   const year =
     work.date.slice(0, 4);
 
+
   if (!worksByYear[year]) {
     worksByYear[year] = [];
   }
+
 
   worksByYear[year].push(work);
 
@@ -46,10 +59,8 @@ years.forEach(year => {
 
   worksByYear[year]
     .sort((a, b) => {
-
       return new Date(b.date)
            - new Date(a.date);
-
     })
     .forEach(work => {
 
@@ -68,24 +79,9 @@ years.forEach(year => {
         document.createElement("span");
 
 
-      const categoryNames = {
-
-        douga: "DOUGA",
-        illustration: "ILLUSTRATION",
-        game: "GAME",
-        manga: "MANGA",
-        ongaku: "ONGAKU",
-        "3dcg": "3DCG",
-        animation: "ANIMATION"
-
-      };
-
-
       const categoryText =
         work.categories
-          .map(category =>
-            categoryNames[category]
-          )
+          .map(category => categoryNames[category])
           .join(" / ");
 
 
