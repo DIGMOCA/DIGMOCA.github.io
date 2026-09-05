@@ -150,8 +150,10 @@ function createFilters() {
   const allButton =
     document.createElement("button");
 
-  allButton.className =
-    "series-filter-button active";
+allButton.className =
+  currentSeries === "all"
+    ? "series-filter-button active"
+    : "series-filter-button";
 
   allButton.textContent = "ALL";
 
@@ -165,8 +167,10 @@ function createFilters() {
     const button =
       document.createElement("button");
 
-    button.className =
-      "series-filter-button";
+button.className =
+  currentSeries === seriesName
+    ? "series-filter-button active"
+    : "series-filter-button";
 
     button.textContent =
       seriesName;
