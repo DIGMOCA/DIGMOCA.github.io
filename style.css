@@ -128,6 +128,106 @@ footer {
   font-size: 13px;
 }
 
+/* 年代フィルター */
+
+.year-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 32px;
+}
+
+.year-filter-button {
+  padding: 4px 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 13px;
+  color: #777;
+  cursor: pointer;
+}
+
+.year-filter-button:hover {
+  color: #111;
+}
+
+.year-filter-button.active {
+  color: #111;
+  font-weight: bold;
+  border-bottom: 1px solid #111;
+}
+
+
+.year {
+  margin-top: 40px;
+}
+
+.year h3 {
+  margin-top: 48px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 20px;
+}
+
+.year-works {
+  width: 100%;
+}
+
+.year-work {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.year-thumbnail {
+  flex: 0 0 180px;
+}
+
+.year-thumbnail img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.year-work-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.year-work-info h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.year-work-info h4 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.year-work-info h4 a:hover {
+  text-decoration: underline;
+}
+
+.year-work-info p {
+  margin: 0;
+  font-size: 13px;
+  color: #777;
+}
+
+
+@media (max-width: 600px) {
+
+  .year-work {
+    gap: 12px;
+  }
+
+  .year-thumbnail {
+    flex-basis: 110px;
+  }
+
+}
+
 .about {
   max-width: 700px;
   line-height: 1.8;
