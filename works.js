@@ -7,11 +7,11 @@ const filterButtons =
   document.querySelectorAll(".filter-button");
 
 const categoryNames = {
-  douga: "DOUGA",
+  video: "VIDEO",
   illustration: "ILLUSTRATION",
   game: "GAME",
   manga: "MANGA",
-  ongaku: "ONGAKU",
+  music: "MUSIC",
   "3dcg": "3DCG",
   animation: "ANIMATION"
 };
