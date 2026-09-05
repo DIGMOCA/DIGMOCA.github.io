@@ -371,7 +371,7 @@ const nextHTML =
         href="${nextURL}"
       >
         <span class="work-nav-label">
-          次の作品 →
+          ← 次の作品
         </span>
 
         <span class="work-nav-title">
@@ -390,7 +390,7 @@ const previousHTML =
         href="${previousURL}"
       >
         <span class="work-nav-label">
-          ← 前の作品
+          前の作品 →
         </span>
 
         <span class="work-nav-title">
