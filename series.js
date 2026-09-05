@@ -24,10 +24,24 @@ const worksBySeries = {};
 
 works.forEach(work => {
 
-  if (!Array.isArray(work.series)) {
+  // series が存在しない、または空配列なら
+  // 自動的に「未分類」へ入れる
+  if (
+    !Array.isArray(work.series) ||
+    work.series.length === 0
+  ) {
+
+    if (!worksBySeries["未分類"]) {
+      worksBySeries["未分類"] = [];
+    }
+
+    worksBySeries["未分類"].push(work);
+
     return;
   }
 
+
+  // 通常のシリーズ作品
   work.series.forEach(seriesName => {
 
     if (!seriesName) {
@@ -46,7 +60,7 @@ works.forEach(work => {
 
 
 // ==============================
-// シリーズの表示順を取得
+// シリーズの表示順
 // ==============================
 
 const seriesOrderMap = {};
@@ -59,13 +73,10 @@ seriesData.forEach(series => {
 });
 
 
-// works-data.js に実際に存在する
-// 全シリーズを取得
 const seriesNames =
   Object.keys(worksBySeries);
 
 
-// order順に並べる
 seriesNames.sort((a, b) => {
 
   const hasA =
@@ -81,7 +92,6 @@ seriesNames.sort((a, b) => {
     );
 
 
-  // 両方登録済み
   if (hasA && hasB) {
 
     const difference =
@@ -97,19 +107,16 @@ seriesNames.sort((a, b) => {
   }
 
 
-  // aだけ登録済み
   if (hasA) {
     return -1;
   }
 
 
-  // bだけ登録済み
   if (hasB) {
     return 1;
   }
 
 
-  // 両方未登録
   return a.localeCompare(b, "ja");
 
 });
@@ -224,6 +231,24 @@ function renderSeries() {
       seriesName;
 
     section.appendChild(heading);
+
+
+    // 「未分類」であることを
+    // 閲覧者に明示する説明文
+    if (seriesName === "未分類") {
+
+      const note =
+        document.createElement("p");
+
+      note.className =
+        "series-unclassified-note";
+
+      note.textContent =
+        "特定のシリーズに属していない作品です。";
+
+      section.appendChild(note);
+
+    }
 
 
     const list =
