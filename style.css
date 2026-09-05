@@ -428,6 +428,10 @@ footer {
 }
 
 .work-nav-next {
+  text-align: left;
+}
+
+.work-nav-previous {
   text-align: right;
 }
 
