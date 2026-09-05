@@ -1,23 +1,3 @@
-const works = [
-
-  {
-    title: "【無色透名美術館】ひ　い　　て　　　い　　　　く　　　　　　。",
-    date: "2026-07-23",
-    categories: ["illustration"],
-    image: "images/musyokutoumei3_5.jpg",
-    page: "works/musyokutoumei3_5.html"
-  }
-
-    {
-    title: "【無色透名美術館】とか、いわな",
-    date: "2026-05-24",
-    categories: ["illustration"],
-    image: "images/musyokutoumei3_4.jpg",
-    page: "works/musyokutoumei3_4.html"
-  }
-
-];
-
 let currentFilter = "all";
 
 const worksList =
@@ -27,13 +7,26 @@ const filterButtons =
   document.querySelectorAll(".filter-button");
 
 
+const categoryNames = {
+  douga: "DOUGA",
+  illustration: "ILLUSTRATION",
+  game: "GAME",
+  manga: "MANGA",
+  ongaku: "ONGAKU",
+  "3dcg": "3DCG",
+  animation: "ANIMATION"
+};
+
+
 function renderWorks() {
 
   worksList.innerHTML = "";
 
-  const sortedWorks = [...works].sort((a, b) => {
-    return new Date(b.date) - new Date(a.date);
-  });
+  const sortedWorks =
+    [...works].sort((a, b) => {
+      return new Date(b.date)
+           - new Date(a.date);
+    });
 
 
   sortedWorks.forEach(work => {
@@ -54,21 +47,7 @@ function renderWorks() {
 
     const categoryText =
       work.categories
-        .map(category => {
-
-          const names = {
-            douga: "DOUGA",
-            illustration: "ILLUSTRATION",
-            game: "GAME",
-            manga: "MANGA",
-            ongaku: "ONGAKU",
-            "3dcg": "3DCG",
-            animation: "ANIMATION"
-          };
-
-          return names[category];
-
-        })
+        .map(category => categoryNames[category])
         .join(" / ");
 
 
