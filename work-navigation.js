@@ -3,7 +3,7 @@ const navigation =
 
 
 // ==============================
-// 現在の作品を取得
+// 基本情報
 // ==============================
 
 const currentFile =
@@ -12,32 +12,86 @@ const currentFile =
     .pop();
 
 
-// ==============================
-// URLからシリーズ名を取得
-// ==============================
-
 const params =
   new URLSearchParams(
     window.location.search
   );
 
+
 const currentSeries =
   params.get("series");
 
+const currentCategory =
+  params.get("category");
+
 
 // ==============================
-// 並び順を決定
+// カテゴリ設定
 // ==============================
 
-let navigationWorks;
+const categoryNames = {
+  video: "VIDEO",
+  illustration: "ILLUSTRATION",
+  game: "GAME",
+  manga: "MANGA",
+  music: "MUSIC",
+  "3dcg": "3DCG",
+  animation: "ANIMATION"
+};
 
 
-// SERIESから来た場合
+const categoryOrder = [
+  "video",
+  "illustration",
+  "game",
+  "manga",
+  "music",
+  "3dcg",
+  "animation"
+];
+
+
+// ==============================
+// 日付順
+// ==============================
+
+function sortByDate(workList) {
+
+  return [...workList]
+    .sort((a, b) => {
+
+      return (
+        new Date(b.date) -
+        new Date(a.date)
+      );
+
+    });
+
+}
+
+
+// ==============================
+// 前後の作品を決定
+// ==============================
+
+let previousWork = null;
+let nextWork = null;
+
+let previousContext = "";
+let nextContext = "";
+
+let contextHTML = "";
+
+
+// ==================================================
+// SERIESモード
+// ==================================================
+
 if (currentSeries) {
 
-  navigationWorks =
-    works
-      .filter(work => {
+  const navigationWorks =
+    sortByDate(
+      works.filter(work => {
 
         return (
           Array.isArray(work.series) &&
@@ -45,99 +99,269 @@ if (currentSeries) {
         );
 
       })
-      .sort((a, b) => {
+    );
 
-        return (
-          new Date(b.date) -
-          new Date(a.date)
-        );
 
-      });
+  const currentIndex =
+    navigationWorks.findIndex(
+      work =>
+        work.page.endsWith(currentFile)
+    );
+
+
+  if (currentIndex !== -1) {
+
+    // 左側・新しい作品
+    nextWork =
+      navigationWorks[currentIndex - 1];
+
+    // 右側・古い作品
+    previousWork =
+      navigationWorks[currentIndex + 1];
+
+  }
+
+
+  const encodedSeries =
+    encodeURIComponent(currentSeries);
+
+
+  previousContext =
+    `?series=${encodedSeries}`;
+
+  nextContext =
+    `?series=${encodedSeries}`;
+
+
+  contextHTML = `
+    <div class="work-nav-series">
+      <a
+        href="../series.html?series=${encodedSeries}"
+      >
+        ${currentSeries}
+      </a>
+    </div>
+  `;
 
 }
 
 
-// 通常の場合
+// ==================================================
+// WORKS・カテゴリモード
+// ==================================================
+
+else if (
+  currentCategory &&
+  categoryOrder.includes(currentCategory)
+) {
+
+  const currentCategoryIndex =
+    categoryOrder.indexOf(
+      currentCategory
+    );
+
+
+  const categoryWorks =
+    sortByDate(
+      works.filter(work =>
+        work.categories.includes(
+          currentCategory
+        )
+      )
+    );
+
+
+  const currentIndex =
+    categoryWorks.findIndex(
+      work =>
+        work.page.endsWith(currentFile)
+    );
+
+
+  if (currentIndex !== -1) {
+
+    // ----------------------------------
+    // 左側「次の作品」＝同媒体の新しい作品
+    // ----------------------------------
+
+    nextWork =
+      categoryWorks[currentIndex - 1];
+
+
+    // 同媒体に新しい作品がない場合
+    // 一つ前の媒体の「一番古い作品」へ
+    if (!nextWork) {
+
+      for (
+        let i = currentCategoryIndex - 1;
+        i >= 0;
+        i--
+      ) {
+
+        const adjacentWorks =
+          sortByDate(
+            works.filter(work =>
+              work.categories.includes(
+                categoryOrder[i]
+              )
+            )
+          );
+
+
+        if (adjacentWorks.length > 0) {
+
+          nextWork =
+            adjacentWorks[
+              adjacentWorks.length - 1
+            ];
+
+          nextContext =
+            `?category=${encodeURIComponent(categoryOrder[i])}`;
+
+          break;
+
+        }
+
+      }
+
+    }
+
+
+    // 同じ媒体内なら現在のcategoryを維持
+    if (
+      nextWork &&
+      !nextContext
+    ) {
+
+      nextContext =
+        `?category=${encodeURIComponent(currentCategory)}`;
+
+    }
+
+
+    // ----------------------------------
+    // 右側「前の作品」＝同媒体の古い作品
+    // ----------------------------------
+
+    previousWork =
+      categoryWorks[currentIndex + 1];
+
+
+    // 同媒体に古い作品がない場合
+    // 一つ後ろの媒体の「一番新しい作品」へ
+    if (!previousWork) {
+
+      for (
+        let i = currentCategoryIndex + 1;
+        i < categoryOrder.length;
+        i++
+      ) {
+
+        const adjacentWorks =
+          sortByDate(
+            works.filter(work =>
+              work.categories.includes(
+                categoryOrder[i]
+              )
+            )
+          );
+
+
+        if (adjacentWorks.length > 0) {
+
+          previousWork =
+            adjacentWorks[0];
+
+          previousContext =
+            `?category=${encodeURIComponent(categoryOrder[i])}`;
+
+          break;
+
+        }
+
+      }
+
+    }
+
+
+    // 同じ媒体内なら現在のcategoryを維持
+    if (
+      previousWork &&
+      !previousContext
+    ) {
+
+      previousContext =
+        `?category=${encodeURIComponent(currentCategory)}`;
+
+    }
+
+  }
+
+
+  contextHTML = `
+    <div class="work-nav-series">
+      <a
+        href="../index.html?category=${encodeURIComponent(currentCategory)}"
+      >
+        ${categoryNames[currentCategory]}
+      </a>
+    </div>
+  `;
+
+}
+
+
+// ==================================================
+// ALLモード
+// ==================================================
+
 else {
 
-  navigationWorks =
-    [...works]
-      .sort((a, b) => {
+  const navigationWorks =
+    sortByDate(works);
 
-        return (
-          new Date(b.date) -
-          new Date(a.date)
-        );
 
-      });
+  const currentIndex =
+    navigationWorks.findIndex(
+      work =>
+        work.page.endsWith(currentFile)
+    );
+
+
+  if (currentIndex !== -1) {
+
+    // 左＝新しい
+    nextWork =
+      navigationWorks[currentIndex - 1];
+
+    // 右＝古い
+    previousWork =
+      navigationWorks[currentIndex + 1];
+
+  }
 
 }
 
 
 // ==============================
-// 現在の作品位置を取得
+// URL生成
 // ==============================
 
-const currentIndex =
-  navigationWorks.findIndex(
-    work => {
-      return work.page.endsWith(
-        currentFile
-      );
-    }
-  );
+const nextURL =
+  nextWork
+    ? `../${nextWork.page}${nextContext}`
+    : null;
+
+
+const previousURL =
+  previousWork
+    ? `../${previousWork.page}${previousContext}`
+    : null;
 
 
 // ==============================
-// 前後ナビゲーション
+// HTML生成
 // ==============================
-
-if (currentIndex !== -1) {
-
-  const previousWork =
-    navigationWorks[
-      currentIndex + 1
-    ];
-
-  const nextWork =
-    navigationWorks[
-      currentIndex - 1
-    ];
-
-
-  const previousURL =
-    previousWork
-      ? `../${previousWork.page}${
-          currentSeries
-            ? `?series=${encodeURIComponent(currentSeries)}`
-            : ""
-        }`
-      : null;
-
-
-  const nextURL =
-    nextWork
-      ? `../${nextWork.page}${
-          currentSeries
-            ? `?series=${encodeURIComponent(currentSeries)}`
-            : ""
-        }`
-      : null;
-
-
-const seriesHTML =
-  currentSeries
-    ? `
-      <div class="work-nav-series">
-        <a
-          href="../series.html?series=${encodeURIComponent(currentSeries)}"
-        >
-          ${currentSeries}
-        </a>
-      </div>
-    `
-    : "";
-
 
 const nextHTML =
   nextWork
@@ -156,6 +380,7 @@ const nextHTML =
       </a>
     `
     : `<div></div>`;
+
 
 const previousHTML =
   previousWork
@@ -176,15 +401,17 @@ const previousHTML =
     : `<div></div>`;
 
 
-  navigation.innerHTML = `
-  
-    ${seriesHTML}
-  
-    <nav class="work-navigation">
-      ${nextHTML}
-      ${previousHTML}
-    </nav>
-  
-  `;
-  
-}
+// ==============================
+// 表示
+// ==============================
+
+navigation.innerHTML = `
+
+  ${contextHTML}
+
+  <nav class="work-navigation">
+    ${nextHTML}
+    ${previousHTML}
+  </nav>
+
+`;
