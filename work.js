@@ -8,6 +8,14 @@ const works = [
     page: "works/musyokutoumei3_5.html"
   }
 
+    {
+    title: "【無色透名美術館】とか、いわな",
+    date: "2026-05-24",
+    categories: ["illustration"],
+    image: "images/musyokutoumei3_4.jpg",
+    page: "works/musyokutoumei3_4.html"
+  }
+
 ];
 
 let currentFilter = "all";
