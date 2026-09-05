@@ -178,14 +178,14 @@ const seriesHTML =
 
 
   navigation.innerHTML = `
-
+  
     ${seriesHTML}
-
+  
     <nav class="work-navigation">
-      ${previousHTML}
       ${nextHTML}
+      ${previousHTML}
     </nav>
-
+  
   `;
-
+  
 }
