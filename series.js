@@ -36,11 +36,30 @@ works.forEach(work => {
 });
 
 
+const seriesOrderMap = {};
+
+seriesData.forEach(series => {
+  seriesOrderMap[series.name] = series.order;
+});
+
+
 const seriesNames =
   Object.keys(worksBySeries)
-    .sort((a, b) =>
-      a.localeCompare(b, "ja")
-    );
+    .sort((a, b) => {
+
+      const orderA =
+        seriesOrderMap[a] ?? 9999;
+
+      const orderB =
+        seriesOrderMap[b] ?? 9999;
+
+      if (orderA !== orderB) {
+        return orderA - orderB;
+      }
+
+      return a.localeCompare(b, "ja");
+
+    });
 
 
 let currentSeries = "all";
