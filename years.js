@@ -1,7 +1,6 @@
 const yearsList =
   document.getElementById("years-list");
 
-
 const categoryNames = {
   douga: "DOUGA",
   illustration: "ILLUSTRATION",
@@ -12,93 +11,83 @@ const categoryNames = {
   animation: "ANIMATION"
 };
 
+if (yearsList) {
 
-const worksByYear = {};
+  const worksByYear = {};
 
+  works.forEach(work => {
 
-works.forEach(work => {
+    const year =
+      work.date.slice(0, 4);
 
-  const year =
-    work.date.slice(0, 4);
+    if (!worksByYear[year]) {
+      worksByYear[year] = [];
+    }
 
+    worksByYear[year].push(work);
 
-  if (!worksByYear[year]) {
-    worksByYear[year] = [];
-  }
+  });
 
+  const years =
+    Object.keys(worksByYear)
+      .sort((a, b) => b - a);
 
-  worksByYear[year].push(work);
+  years.forEach(year => {
 
-});
+    const section =
+      document.createElement("section");
 
+    section.className = "years";
 
-const years =
-  Object.keys(worksByYear)
-    .sort((a, b) => b - a);
+    const heading =
+      document.createElement("h3");
 
+    heading.textContent = year;
 
-years.forEach(year => {
+    section.appendChild(heading);
 
-  const section =
-    document.createElement("section");
+    const ul =
+      document.createElement("ul");
 
-  section.className = "years";
+    worksByYear[year]
+      .sort((a, b) => {
+        return new Date(b.date)
+          - new Date(a.date);
+      })
+      .forEach(work => {
 
+        const li =
+          document.createElement("li");
 
-  const heading =
-    document.createElement("h3");
+        const link =
+          document.createElement("a");
 
-  heading.textContent = year;
+        link.href = work.page;
+        link.textContent = work.title;
 
-  section.appendChild(heading);
+        const span =
+          document.createElement("span");
 
+        const categoryText =
+          work.categories
+            .map(category =>
+              categoryNames[category] || category
+            )
+            .join(" / ");
 
-  const ul =
-    document.createElement("ul");
+        span.textContent =
+          ` / ${work.date} / ${categoryText}`;
 
+        li.appendChild(link);
+        li.appendChild(span);
 
-  worksByYear[year]
-    .sort((a, b) => {
-      return new Date(b.date)
-           - new Date(a.date);
-    })
-    .forEach(work => {
+        ul.appendChild(li);
 
-      const li =
-        document.createElement("li");
+      });
 
+    section.appendChild(ul);
+    yearsList.appendChild(section);
 
-      const link =
-        document.createElement("a");
+  });
 
-      link.href = work.page;
-      link.textContent = work.title;
-
-
-      const span =
-        document.createElement("span");
-
-
-      const categoryText =
-        work.categories
-          .map(category => categoryNames[category])
-          .join(" / ");
-
-
-      span.textContent =
-        ` / ${work.date} / ${categoryText}`;
-
-
-      li.appendChild(link);
-      li.appendChild(span);
-
-      ul.appendChild(li);
-
-    });
-
-
-  section.appendChild(ul);
-
-  yearsList.appendChild(section);
-
-});
+}
