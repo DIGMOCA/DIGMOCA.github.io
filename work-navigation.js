@@ -2,34 +2,127 @@ const navigation =
   document.getElementById("work-navigation");
 
 
-// 現在開いている作品ページのファイル名を取得
+// ==============================
+// 現在の作品を取得
+// ==============================
+
 const currentFile =
   window.location.pathname
     .split("/")
     .pop();
 
 
-// works-data.js の作品を日付順に並べる
-const sortedWorks =
-  [...works].sort((a, b) => {
-    return new Date(b.date) - new Date(a.date);
-  });
+// ==============================
+// URLからシリーズ名を取得
+// ==============================
+
+const params =
+  new URLSearchParams(
+    window.location.search
+  );
+
+const currentSeries =
+  params.get("series");
 
 
-// 現在の作品を探す
+// ==============================
+// 並び順を決定
+// ==============================
+
+let navigationWorks;
+
+
+// SERIESから来た場合
+if (currentSeries) {
+
+  navigationWorks =
+    works
+      .filter(work => {
+
+        return (
+          Array.isArray(work.series) &&
+          work.series.includes(currentSeries)
+        );
+
+      })
+      .sort((a, b) => {
+
+        return (
+          new Date(b.date) -
+          new Date(a.date)
+        );
+
+      });
+
+}
+
+
+// 通常の場合
+else {
+
+  navigationWorks =
+    [...works]
+      .sort((a, b) => {
+
+        return (
+          new Date(b.date) -
+          new Date(a.date)
+        );
+
+      });
+
+}
+
+
+// ==============================
+// 現在の作品位置を取得
+// ==============================
+
 const currentIndex =
-  sortedWorks.findIndex(work => {
-    return work.page.endsWith(currentFile);
-  });
+  navigationWorks.findIndex(
+    work => {
+      return work.page.endsWith(
+        currentFile
+      );
+    }
+  );
 
+
+// ==============================
+// 前後ナビゲーション
+// ==============================
 
 if (currentIndex !== -1) {
 
   const previousWork =
-    sortedWorks[currentIndex + 1];
+    navigationWorks[
+      currentIndex + 1
+    ];
 
   const nextWork =
-    sortedWorks[currentIndex - 1];
+    navigationWorks[
+      currentIndex - 1
+    ];
+
+
+  const previousURL =
+    previousWork
+      ? `../${previousWork.page}${
+          currentSeries
+            ? `?series=${encodeURIComponent(currentSeries)}`
+            : ""
+        }`
+      : null;
+
+
+  const nextURL =
+    nextWork
+      ? `../${nextWork.page}${
+          currentSeries
+            ? `?series=${encodeURIComponent(currentSeries)}`
+            : ""
+        }`
+      : null;
 
 
   const previousHTML =
@@ -37,7 +130,7 @@ if (currentIndex !== -1) {
       ? `
         <a
           class="work-nav-link work-nav-previous"
-          href="../${previousWork.page}"
+          href="${previousURL}"
         >
           <span class="work-nav-label">
             ← 前の作品
@@ -56,7 +149,7 @@ if (currentIndex !== -1) {
       ? `
         <a
           class="work-nav-link work-nav-next"
-          href="../${nextWork.page}"
+          href="${nextURL}"
         >
           <span class="work-nav-label">
             次の作品 →
