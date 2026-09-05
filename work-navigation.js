@@ -125,6 +125,16 @@ if (currentIndex !== -1) {
       : null;
 
 
+  const seriesHTML =
+    currentSeries
+      ? `
+        <div class="work-nav-series">
+          ${currentSeries}
+        </div>
+      `
+      : "";
+
+
   const previousHTML =
     previousWork
       ? `
@@ -164,10 +174,14 @@ if (currentIndex !== -1) {
 
 
   navigation.innerHTML = `
+
+    ${seriesHTML}
+
     <nav class="work-navigation">
       ${previousHTML}
       ${nextHTML}
     </nav>
+
   `;
 
 }
