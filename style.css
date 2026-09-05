@@ -467,3 +467,12 @@ footer {
 .work-nav-series + .work-navigation {
   margin-top: 0;
 }
+
+.work-nav-series a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.work-nav-series a:hover {
+  text-decoration: underline;
+}
