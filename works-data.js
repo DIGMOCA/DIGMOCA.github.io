@@ -23,5 +23,13 @@ const works = [
     image: "images/musyokutoumei3_3.jpg",
     page: "works/musyokutoumei3_3.html"
   },
+
+    {
+    title: "MIZU・UMI / 東北きりたん",
+    date: "2022-10-08",
+    categories: ["music"],
+    image: "images/vocaloid_1.jpg",
+    page: "works/vocaloid_1.html"
+  },
   
 ];
