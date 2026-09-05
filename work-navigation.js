@@ -134,7 +134,7 @@ if (currentSeries) {
 
 
   contextHTML = `
-    <div class="work-nav-series">
+    <div class="work-nav-context">
       <a
         href="../series.html?series=${encodedSeries}"
       >
@@ -299,7 +299,7 @@ else if (
 
 
   contextHTML = `
-    <div class="work-nav-series">
+    <div class="work-nav-context">
       <a
         href="../index.html?category=${encodeURIComponent(currentCategory)}"
       >
