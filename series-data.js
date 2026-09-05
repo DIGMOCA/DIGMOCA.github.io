@@ -31,8 +31,5 @@ const seriesData = [
     name: "無色透名美術館",
     order: 8
   },
-  {
-    name: "未分類",
-    order: 9
-  }
+ 
 ];
