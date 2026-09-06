@@ -621,13 +621,15 @@ ${ogImageHTML}
       </p>
 
       <div class="work-content">
-
+      
         ${content}
-
+      
       </div>
-
-    </article>
-
+      
+      ${extensionHTML}
+      
+      </article>
+      
     <div id="work-navigation"></div>
 
   </main>
