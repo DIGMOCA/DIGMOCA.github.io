@@ -266,6 +266,27 @@ function renderContent(
 
       }
 
+      // ------------------------
+      // NICONICO
+      // ------------------------
+      
+      if (
+        item.type === "niconico"
+      ) {
+      
+        return `
+          <div class="video-embed">
+            <iframe
+              src="https://embed.nicovideo.jp/watch/${escapeHTML(item.id)}"
+              title="${escapeHTML(work.title)}"
+              loading="lazy"
+              allowfullscreen
+            ></iframe>
+          </div>
+        `;
+      
+      }
+
 
       // ------------------------
       // TIKTOK
