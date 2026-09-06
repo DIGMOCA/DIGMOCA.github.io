@@ -57,7 +57,7 @@ const works = [
       {
         type: "link",
         label: "Youtube",
-        url: "https://www.youtube.com/watch?v=kX3PKmyzb3I,
+        url: "https://www.youtube.com/watch?v=kX3PKmyzb3I",
       },
       {
         type: "link",
