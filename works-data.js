@@ -12,23 +12,23 @@ const works = [
      content: [
       {
         type: "image",
-        src: "images/musyokutoumei3_3.jpg",
+        src: "images/musyokutoumei3_5.jpg",
       },
       {
         type: "text",
-        text: "無色透名祭３で投稿された「黄昏に染まる / 重音テト」のファンアートです。",
+        text: "無色透名祭３で投稿された「ひ　い　　て　　　い　　　　く　　　　　　。 / 可不, 初音ミク」のファンアートです。",
       },
       {
         type: "text-link",
         before: "素敵な楽曲は",
         label: "こちら",
-        url: "https://www.nicovideo.jp/watch/so45511807",
+        url: "ttps://www.nicovideo.jp/watch/so45516248",
         after: "",
       },
       {
         type: "link",
         label: "Pixiv",
-        url: "https://www.pixiv.net/artworks/144257619",
+        url: "https://www.pixiv.net/artworks/147519909",
       },
       {
         type: "link",
@@ -123,6 +123,34 @@ const works = [
     series: ["無色透名美術館"],
     image: "images/musyokutoumei3_2.jpg",
     page: "works/musyokutoumei3_2.html",
+
+         content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei3_2.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭３で投稿された「誤算 / 歌愛ユキ」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so45516648",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "Pixiv",
+        url: "https://www.pixiv.net/artworks/138330972",
+      },
+      {
+        type: "link",
+        label: "無色透名祭３",
+        url: "https://site.nicovideo.jp/mushokutomeisai/2025/",
+      },
+    ],
   },
 
   {
