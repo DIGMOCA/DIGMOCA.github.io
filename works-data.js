@@ -573,8 +573,7 @@ const works = [
       },
       {
         type: "text",
-        text: "Lyric、Music、Mix、Vocal Edit：Monk
-          動画を制作しました。",
+        text: "動画を制作しました。\n\nLyric、Music、Mix、Vocal Edit：Monk",
       },
       {
         type: "link",
