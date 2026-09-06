@@ -149,6 +149,43 @@ const works = [
     ],
   },
 
+    {
+    id: "musyokutoumei3_1",
+    title: "【無色透名美術館】本郷三丁目",
+    date: "2025-11-24",
+    categories: ["illustration"],
+    series: ["無色透名美術館"],
+    image: "images/musyokutoumei3_1.jpg",
+
+         content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei3_1.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭３で投稿された「本郷三丁目 / GUMI」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so45516622",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "Pixiv",
+        url: "https://www.pixiv.net/artworks/137854423",
+      },
+      {
+        type: "link",
+        label: "無色透名祭３",
+        url: "https://site.nicovideo.jp/mushokutomeisai/2025/",
+      },
+    ],
+  },
+  
   {
     id: "animation_1",
     title: "くるくる",
