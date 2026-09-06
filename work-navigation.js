@@ -1,10 +1,23 @@
 const navigation =
-  document.getElementById("work-navigation");
+  document.getElementById(
+    "work-navigation"
+  );
 
 
-// ==============================
-// 基本情報
-// ==============================
+// ========================================
+// idから作品ページを生成
+// ========================================
+
+function getWorkPage(work) {
+
+  return `works/${work.id}.html`;
+
+}
+
+
+// ========================================
+// 現在の作品
+// ========================================
 
 const currentFile =
   window.location.pathname
@@ -21,13 +34,14 @@ const params =
 const currentSeries =
   params.get("series");
 
+
 const currentCategory =
   params.get("category");
 
 
-// ==============================
-// カテゴリ設定
-// ==============================
+// ========================================
+// カテゴリ
+// ========================================
 
 const categoryNames = {
   video: "VIDEO",
@@ -51,28 +65,46 @@ const categoryOrder = [
 ];
 
 
-// ==============================
+// ========================================
 // 日付順
-// ==============================
+// 新しい → 古い
+// ========================================
 
-function sortByDate(workList) {
+function sortByDate(
+  workList
+) {
 
-  return [...workList]
-    .sort((a, b) => {
-
-      return (
-        new Date(b.date) -
-        new Date(a.date)
-      );
-
-    });
+  return [
+    ...workList
+  ]
+  .sort(
+    (a, b) =>
+      new Date(b.date) -
+      new Date(a.date)
+  );
 
 }
 
 
-// ==============================
-// 前後の作品を決定
-// ==============================
+// ========================================
+// 現在作品判定
+// ========================================
+
+function isCurrentWork(
+  work
+) {
+
+  return getWorkPage(work)
+    .endsWith(
+      currentFile
+    );
+
+}
+
+
+// ========================================
+// ナビゲーション
+// ========================================
 
 let previousWork = null;
 let nextWork = null;
@@ -84,7 +116,7 @@ let contextHTML = "";
 
 
 // ==================================================
-// SERIESモード
+// SERIES
 // ==================================================
 
 if (currentSeries) {
@@ -93,9 +125,33 @@ if (currentSeries) {
     sortByDate(
       works.filter(work => {
 
+        // 未分類
+        if (
+          currentSeries ===
+          "未分類"
+        ) {
+
+          return (
+            !Array.isArray(
+              work.series
+            ) ||
+            work.series.length === 0 ||
+            work.series.every(
+              seriesName =>
+                !seriesName
+            )
+          );
+
+        }
+
+
         return (
-          Array.isArray(work.series) &&
-          work.series.includes(currentSeries)
+          Array.isArray(
+            work.series
+          ) &&
+          work.series.includes(
+            currentSeries
+          )
         );
 
       })
@@ -104,37 +160,50 @@ if (currentSeries) {
 
   const currentIndex =
     navigationWorks.findIndex(
-      work =>
-        work.page.endsWith(currentFile)
+      isCurrentWork
     );
 
 
-  if (currentIndex !== -1) {
+  if (
+    currentIndex !== -1
+  ) {
 
-    // 左側・新しい作品
+    // 左
+    // より新しい作品
     nextWork =
-      navigationWorks[currentIndex - 1];
+      navigationWorks[
+        currentIndex - 1
+      ];
 
-    // 右側・古い作品
+
+    // 右
+    // より古い作品
     previousWork =
-      navigationWorks[currentIndex + 1];
+      navigationWorks[
+        currentIndex + 1
+      ];
 
   }
 
 
   const encodedSeries =
-    encodeURIComponent(currentSeries);
+    encodeURIComponent(
+      currentSeries
+    );
 
 
   previousContext =
     `?series=${encodedSeries}`;
+
 
   nextContext =
     `?series=${encodedSeries}`;
 
 
   contextHTML = `
-    <div class="work-nav-context">
+    <div
+      class="work-nav-context"
+    >
       <a
         href="../series.html?series=${encodedSeries}"
       >
@@ -147,12 +216,14 @@ if (currentSeries) {
 
 
 // ==================================================
-// WORKS・カテゴリモード
+// WORKS カテゴリ
 // ==================================================
 
 else if (
   currentCategory &&
-  categoryOrder.includes(currentCategory)
+  categoryOrder.includes(
+    currentCategory
+  )
 ) {
 
   const currentCategoryIndex =
@@ -173,28 +244,36 @@ else if (
 
   const currentIndex =
     categoryWorks.findIndex(
-      work =>
-        work.page.endsWith(currentFile)
+      isCurrentWork
     );
 
 
-  if (currentIndex !== -1) {
+  if (
+    currentIndex !== -1
+  ) {
 
-    // ----------------------------------
-    // 左側「次の作品」＝同媒体の新しい作品
-    // ----------------------------------
+
+    // ====================================
+    // 左：次の作品
+    // 同媒体のより新しい作品
+    // ====================================
 
     nextWork =
-      categoryWorks[currentIndex - 1];
+      categoryWorks[
+        currentIndex - 1
+      ];
 
 
-    // 同媒体に新しい作品がない場合
-    // 一つ前の媒体の「一番古い作品」へ
+    // 同媒体の一番新しい作品なら
+    // 前の媒体の一番古い作品へ
     if (!nextWork) {
 
       for (
-        let i = currentCategoryIndex - 1;
+        let i =
+          currentCategoryIndex - 1;
+
         i >= 0;
+
         i--
       ) {
 
@@ -208,15 +287,19 @@ else if (
           );
 
 
-        if (adjacentWorks.length > 0) {
+        if (
+          adjacentWorks.length > 0
+        ) {
 
           nextWork =
             adjacentWorks[
               adjacentWorks.length - 1
             ];
 
+
           nextContext =
             `?category=${encodeURIComponent(categoryOrder[i])}`;
+
 
           break;
 
@@ -227,7 +310,6 @@ else if (
     }
 
 
-    // 同じ媒体内なら現在のcategoryを維持
     if (
       nextWork &&
       !nextContext
@@ -239,21 +321,28 @@ else if (
     }
 
 
-    // ----------------------------------
-    // 右側「前の作品」＝同媒体の古い作品
-    // ----------------------------------
+    // ====================================
+    // 右：前の作品
+    // 同媒体のより古い作品
+    // ====================================
 
     previousWork =
-      categoryWorks[currentIndex + 1];
+      categoryWorks[
+        currentIndex + 1
+      ];
 
 
-    // 同媒体に古い作品がない場合
-    // 一つ後ろの媒体の「一番新しい作品」へ
+    // 同媒体の一番古い作品なら
+    // 次の媒体の一番新しい作品へ
     if (!previousWork) {
 
       for (
-        let i = currentCategoryIndex + 1;
-        i < categoryOrder.length;
+        let i =
+          currentCategoryIndex + 1;
+
+        i <
+          categoryOrder.length;
+
         i++
       ) {
 
@@ -267,13 +356,17 @@ else if (
           );
 
 
-        if (adjacentWorks.length > 0) {
+        if (
+          adjacentWorks.length > 0
+        ) {
 
           previousWork =
             adjacentWorks[0];
 
+
           previousContext =
             `?category=${encodeURIComponent(categoryOrder[i])}`;
+
 
           break;
 
@@ -284,7 +377,6 @@ else if (
     }
 
 
-    // 同じ媒体内なら現在のcategoryを維持
     if (
       previousWork &&
       !previousContext
@@ -299,7 +391,9 @@ else if (
 
 
   contextHTML = `
-    <div class="work-nav-context">
+    <div
+      class="work-nav-context"
+    >
       <a
         href="../index.html?category=${encodeURIComponent(currentCategory)}"
       >
@@ -312,56 +406,64 @@ else if (
 
 
 // ==================================================
-// ALLモード
+// ALL
 // ==================================================
 
 else {
 
   const navigationWorks =
-    sortByDate(works);
+    sortByDate(
+      works
+    );
 
 
   const currentIndex =
     navigationWorks.findIndex(
-      work =>
-        work.page.endsWith(currentFile)
+      isCurrentWork
     );
 
 
-  if (currentIndex !== -1) {
+  if (
+    currentIndex !== -1
+  ) {
 
-    // 左＝新しい
+    // 左＝より新しい
     nextWork =
-      navigationWorks[currentIndex - 1];
+      navigationWorks[
+        currentIndex - 1
+      ];
 
-    // 右＝古い
+
+    // 右＝より古い
     previousWork =
-      navigationWorks[currentIndex + 1];
+      navigationWorks[
+        currentIndex + 1
+      ];
 
   }
 
 }
 
 
-// ==============================
-// URL生成
-// ==============================
+// ========================================
+// URL
+// ========================================
 
 const nextURL =
   nextWork
-    ? `../${nextWork.page}${nextContext}`
+    ? `../${getWorkPage(nextWork)}${nextContext}`
     : null;
 
 
 const previousURL =
   previousWork
-    ? `../${previousWork.page}${previousContext}`
+    ? `../${getWorkPage(previousWork)}${previousContext}`
     : null;
 
 
-// ==============================
-// HTML生成
-// ==============================
+// ========================================
+// HTML
+// ========================================
 
 const nextHTML =
   nextWork
@@ -370,11 +472,15 @@ const nextHTML =
         class="work-nav-link work-nav-next"
         href="${nextURL}"
       >
-        <span class="work-nav-label">
+        <span
+          class="work-nav-label"
+        >
           ← 次の作品
         </span>
 
-        <span class="work-nav-title">
+        <span
+          class="work-nav-title"
+        >
           ${nextWork.title}
         </span>
       </a>
@@ -389,11 +495,15 @@ const previousHTML =
         class="work-nav-link work-nav-previous"
         href="${previousURL}"
       >
-        <span class="work-nav-label">
+        <span
+          class="work-nav-label"
+        >
           前の作品 →
         </span>
 
-        <span class="work-nav-title">
+        <span
+          class="work-nav-title"
+        >
           ${previousWork.title}
         </span>
       </a>
@@ -401,15 +511,17 @@ const previousHTML =
     : `<div></div>`;
 
 
-// ==============================
+// ========================================
 // 表示
-// ==============================
+// ========================================
 
 navigation.innerHTML = `
 
   ${contextHTML}
 
-  <nav class="work-navigation">
+  <nav
+    class="work-navigation"
+  >
     ${nextHTML}
     ${previousHTML}
   </nav>
