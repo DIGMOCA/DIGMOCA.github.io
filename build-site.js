@@ -136,7 +136,10 @@ function absoluteURL(
 // 作品コンテンツ生成
 // ========================================
 
-function renderContent(work) {
+function renderContent(
+  work,
+  filter = "all"
+) {
 
   const workPage =
     getWorkPage(work);
@@ -168,6 +171,39 @@ function renderContent(work) {
 
   return contents
     .map(item => {
+
+            const mainTypes =
+        new Set([
+          "image",
+          "youtube",
+          "tiktok",
+          "video",
+          "audio"
+        ]);
+
+
+      const isMain =
+        mainTypes.has(item.type);
+
+
+      if (
+        filter === "main" &&
+        !isMain
+      ) {
+
+        return "";
+
+      }
+
+
+      if (
+        filter === "details" &&
+        isMain
+      ) {
+
+        return "";
+
+      }
 
 
       // ------------------------
@@ -517,12 +553,26 @@ function renderWorkPage(work) {
     );
 
 
-const content =
-  renderContent(work);
-
-
 const extensionContent =
   loadExtensionContent(work);
+
+
+const mainContent =
+  extensionContent
+    ? renderContent(
+        work,
+        "main"
+      )
+    : renderContent(work);
+
+
+const detailContent =
+  extensionContent
+    ? renderContent(
+        work,
+        "details"
+      )
+    : "";
 
 
 const extensionHTML =
@@ -622,11 +672,22 @@ ${ogImageHTML}
 
       <div class="work-content">
       
-        ${content}
+        ${mainContent}
       
       </div>
       
       ${extensionHTML}
+      
+      ${detailContent
+        ? `
+          <div class="work-content work-details">
+      
+            ${detailContent}
+      
+          </div>
+        `
+        : ""
+      }
       
       </article>
       
