@@ -28,7 +28,7 @@ const works = [
     categories: ["illustration"],
     series: ["無色透名美術館"],
     image: "images/musyokutoumei3_3.jpg",
-    page: "works/musyokutoumei3_3.html"
+    page: "works/musyokutoumei3_3.html",
 
     content: [
   {
