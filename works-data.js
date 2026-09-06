@@ -5,7 +5,7 @@ const works = [
     title: "【無色透名美術館】ひ　い　　て　　　い　　　　く　　　　　　。",
     date: "2026-07-23",
     categories: ["illustration"],
-    series: ["無色透名美術館"],
+    series: ["無色透名美術館", "ファンアート"],
     image: "images/musyokutoumei3_5.jpg",
 
      content: [
@@ -73,7 +73,7 @@ const works = [
     title: "【無色透名美術館】とか、いわな",
     date: "2026-05-24",
     categories: ["illustration"],
-    series: ["無色透名美術館"],
+    series: ["無色透名美術館", "ファンアート"],
     image: "images/musyokutoumei3_4.jpg",
     
      content: [
@@ -110,7 +110,7 @@ const works = [
     title: "【無色透名美術館】黄昏に染まる",
     date: "2026-05-02",
     categories: ["illustration"],
-    series: ["無色透名美術館"],
+    series: ["無色透名美術館", "ファンアート"],
     image: "images/musyokutoumei3_3.jpg",
   
     content: [
@@ -147,7 +147,7 @@ const works = [
     title: "【無色透名美術館】誤算",
     date: "2025-12-07",
     categories: ["illustration"],
-    series: ["無色透名美術館"],
+    series: ["無色透名美術館", "ファンアート"],
     image: "images/musyokutoumei3_2.jpg",
 
          content: [
@@ -184,7 +184,7 @@ const works = [
     title: "【無色透名美術館】本郷三丁目",
     date: "2025-11-24",
     categories: ["illustration"],
-    series: ["無色透名美術館"],
+    series: ["無色透名美術館", "ファンアート"],
     image: "images/musyokutoumei3_1.jpg",
 
          content: [
