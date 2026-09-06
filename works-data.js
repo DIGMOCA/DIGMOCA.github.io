@@ -377,6 +377,80 @@ const works = [
     ],
   },
 
+              {
+    id: "musyokutoumei2_6",
+    title: "【無色透名美術館】反理想滅ぶべし",
+    date: "2025-05-11",
+    categories: ["illustration"],
+    series: ["無色透名美術館", "ファンアート"],
+    image: "images/musyokutoumei2_6.jpg",
+
+     content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei2_6r.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭Ⅱで投稿された「反理想滅ぶべし / v flower, 初音ミク, ずんだもん」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so42901564",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "pixiv",
+        url: "https://www.pixiv.net/artworks/130282351",
+      },
+      {
+        type: "link",
+        label: "無色透名祭Ⅱ",
+        url: "https://site.nicovideo.jp/mushokutomeisai/2023/",
+      },
+    ],
+  },
+
+            {
+    id: "musyokutoumei2_5",
+    title: "【無色透名美術館】オーガスト",
+    date: "2025-04-21",
+    categories: ["illustration"],
+    series: ["無色透名美術館", "ファンアート"],
+    image: "images/musyokutoumei2_5.jpg",
+
+     content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei2_5r.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭Ⅱで投稿された「オーガスト / 小春六花」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so42899284",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "pixiv",
+        url: "https://www.pixiv.net/artworks/129556298",
+      },
+      {
+        type: "link",
+        label: "無色透名祭Ⅱ",
+        url: "https://site.nicovideo.jp/mushokutomeisai/2023/",
+      },
+    ],
+  },
+
     {
     id: "vocaloid_8",
     title: "デイリーディスポーザー / 鏡音レン_宮舞モカ",
@@ -403,6 +477,43 @@ const works = [
         type: "link",
         label: "ニコニコ動画",
         url: "https://www.nicovideo.jp/watch/sm44877251",
+      },
+    ],
+  },
+
+          {
+    id: "musyokutoumei2_4",
+    title: "【無色透名美術館】彁様語雲",
+    date: "2025-03-16",
+    categories: ["illustration"],
+    series: ["無色透名美術館", "ファンアート"],
+    image: "images/musyokutoumei2_4.jpg",
+
+     content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei2_4r.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭Ⅱで投稿された「彁様語雲 / 初音ミク」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so42905688",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "pixiv",
+        url: "https://www.pixiv.net/artworks/128259477",
+      },
+      {
+        type: "link",
+        label: "無色透名祭Ⅱ",
+        url: "https://site.nicovideo.jp/mushokutomeisai/2023/",
       },
     ],
   },
@@ -461,6 +572,119 @@ const works = [
       },
     ],
   },
+
+        {
+    id: "musyokutoumei2_3",
+    title: "【無色透名美術館】時間探検記",
+    date: "2023-11-14",
+    categories: ["illustration"],
+    series: ["無色透名美術館", "ファンアート"],
+    image: "images/musyokutoumei2_3.jpg",
+
+     content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei2_3r.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭Ⅱで投稿された「時間探検記 / 花隈千冬」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so42905741",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "pixiv",
+        url: "https://www.pixiv.net/artworks/128255240",
+      },
+      {
+        type: "link",
+        label: "無色透名祭Ⅱ",
+        url: "https://site.nicovideo.jp/mushokutomeisai/2023/",
+      },
+    ],
+  },
+
+      {
+    id: "musyokutoumei2_2",
+    title: "【無色透名美術館】やっぱり心から思っていることを書かないと歌詞に”重み”がないと思うのでね、本気【ガチ】の本音を歌います。",
+    date: "2023-11-05",
+    categories: ["illustration"],
+    series: ["無色透名美術館", "ファンアート"],
+    image: "images/musyokutoumei2_2.jpg",
+
+     content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei2_2r.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭Ⅱで投稿された「やっぱり心から思っていることを書かないと歌詞に”重み”がないと思うのでね、本気【ガチ】の本音を歌います。 / 星界」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so42905587",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "pixiv",
+        url: "https://www.pixiv.net/artworks/128254750",
+      },
+      {
+        type: "link",
+        label: "無色透名祭Ⅱ",
+        url: "https://site.nicovideo.jp/mushokutomeisai/2023/",
+      },
+    ],
+  },
+
+
+    {
+    id: "musyokutoumei2_1",
+    title: "【無色透名美術館】レターパックで現金送れは全て詐欺です！",
+    date: "2023-11-04",
+    categories: ["illustration"],
+    series: ["無色透名美術館", "ファンアート"],
+    image: "images/musyokutoumei2_1.jpg",
+
+     content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei2_1r.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭Ⅱで投稿された「レターパックで現金送れは全て詐欺です！ / 初音ミク」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so42905365",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "pixiv",
+        url: "https://www.pixiv.net/artworks/128254310",
+      },
+      {
+        type: "link",
+        label: "無色透名祭Ⅱ",
+        url: "https://site.nicovideo.jp/mushokutomeisai/2023/",
+      },
+    ],
+  },
+
 
     {
     id: "vocaloid_6",
