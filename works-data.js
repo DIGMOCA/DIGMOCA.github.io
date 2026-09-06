@@ -256,7 +256,7 @@ const works = [
       },
       {
         type: "text",
-        text: "",
+        text: "ボカコレ2025 Summer参加曲です。",
       },
       {
         type: "link",
