@@ -394,6 +394,34 @@ function renderContent(work) {
 
 }
 
+// ========================================
+// 世界観拡張コンテンツ読み込み
+// ========================================
+
+function loadExtensionContent(work) {
+
+  const contentPath =
+    path.join(
+      ROOT,
+      "contents",
+      `${work.id}.html`
+    );
+
+
+  if (!fs.existsSync(contentPath)) {
+
+    return "";
+
+  }
+
+
+  return fs.readFileSync(
+    contentPath,
+    "utf8"
+  ).trim();
+
+}
+
 
 // ========================================
 // 作品HTML生成
