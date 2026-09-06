@@ -30,6 +30,16 @@ const works = [
     page: "works/musyokutoumei3_3.html"
   },
 
+    {
+    id: "musyokutoumei3_2",
+    title: "【無色透名美術館】誤算",
+    date: "2025-12-07",
+    categories: ["illustration"],
+    series: ["無色透名美術館"],
+    image: "images/musyokutoumei3_2.jpg",
+    page: "works/musyokutoumei3_2.html"
+  },
+
   {
     id: "animation_1",
     title: "くるくる",
