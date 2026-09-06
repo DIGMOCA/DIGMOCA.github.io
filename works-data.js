@@ -218,7 +218,7 @@ const works = [
     date: "2023-04-07",
     categories: ["music"],
     series: ["VOCALOID楽曲", "オリジナル曲α"],
-    image: "images/vocaloid_1.jpg",
+    image: "images/vocaloid_2.jpg",
 
           content: [
       {
