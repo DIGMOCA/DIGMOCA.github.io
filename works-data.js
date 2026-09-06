@@ -215,10 +215,10 @@ const works = [
   {
     id: "vocaloid_2",
     title: "ウドゥのなる木 / 初音ミク",
-    date: "2023-04-078",
+    date: "2023-04-07",
     categories: ["music"],
     series: ["VOCALOID楽曲", "オリジナル曲α"],
-    image: "images/vocaloid_21.jpg",
+    image: "images/vocaloid_1.jpg",
 
           content: [
       {
