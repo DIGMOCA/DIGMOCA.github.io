@@ -261,7 +261,7 @@ const works = [
       {
         type: "link",
         label: "Youtube",
-        url: "https://www.youtube.com/watch?v=VbzYikAoE4g,
+        url: "https://www.youtube.com/watch?v=VbzYikAoE4g",
       },
       {
         type: "link",
