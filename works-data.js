@@ -612,5 +612,31 @@ const works = [
       },
     ],
   },
+
+    {
+    id: "illust_action_1",
+    title: "ジャンプ！",
+    date: "2022-06-04",
+    categories: ["illustration"],
+    series: ["アクションシリーズ"],
+    image: "images/illust_action_1.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_action_1r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Instagram",
+        url: "https://www.instagram.com/p/CeWTvz6LIvm/",
+      },
+    ],
+  },
+  
   
 ];
