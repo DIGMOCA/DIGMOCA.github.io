@@ -7,7 +7,7 @@ const works = [
     categories: ["illustration"],
     series: ["無色透名美術館"],
     image: "images/musyokutoumei3_5.jpg",
-    page: "works/musyokutoumei3_5.html"
+    page: "works/musyokutoumei3_5.html",
   },
 
 
@@ -18,7 +18,7 @@ const works = [
     categories: ["illustration"],
     series: ["無色透名美術館"],
     image: "images/musyokutoumei3_4.jpg",
-    page: "works/musyokutoumei3_4.html"
+    page: "works/musyokutoumei3_4.html",
   },
 
   {
@@ -51,7 +51,7 @@ const works = [
     type: "link",
     label: "無色透名祭３",
     url: "https://site.nicovideo.jp/mushokutomeisai/2025/"
-  }
+  },
 
   
   },
@@ -63,7 +63,7 @@ const works = [
     categories: ["illustration"],
     series: ["無色透名美術館"],
     image: "images/musyokutoumei3_2.jpg",
-    page: "works/musyokutoumei3_2.html"
+    page: "works/musyokutoumei3_2.html",
   },
 
   {
@@ -73,7 +73,7 @@ const works = [
     categories: ["animation"],
     series: [""],
     image: "images/animation_1.jpg",
-    page: "works/animation_1.html"
+    page: "works/animation_1.html",
   },
 
   {
@@ -83,7 +83,7 @@ const works = [
     categories: ["music"],
     series: ["VOCALOID楽曲", "オリジナル曲α"],
     image: "images/vocaloid_1.jpg",
-    page: "works/vocaloid_1.html"
+    page: "works/vocaloid_1.html",
   },
   
 ];
