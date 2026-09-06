@@ -212,6 +212,37 @@ const works = [
     ],
   },
 
+  {
+    id: "vocaloid_5",
+    title: "ヴェルベールディング・クリエールン / 初音ミク_東北きりたん",
+    date: "2023-06-16",
+    categories: ["music"],
+    series: ["VOCALOID楽曲", "オリジナル曲γ"],
+    image: "images/vocaloid_5.jpg",
+
+          content: [
+      {
+        type: "youtube",
+        id: "4Ais-mG6zaI"
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://www.youtube.com/watch?v=4Ais-mG6zaI",
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/sm42361860",
+      },
+    ],
+  },
+
+
     {
     id: "vocaloid_4",
     title: "聖戦地獄 / 初音ミク",
