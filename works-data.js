@@ -7,7 +7,6 @@ const works = [
     categories: ["illustration"],
     series: ["無色透名美術館"],
     image: "images/musyokutoumei3_5.jpg",
-    page: "works/musyokutoumei3_5.html",
 
      content: [
       {
@@ -46,7 +45,6 @@ const works = [
     categories: ["illustration"],
     series: ["無色透名美術館"],
     image: "images/musyokutoumei3_4.jpg",
-    page: "works/musyokutoumei3_4.html",
     
      content: [
       {
@@ -84,7 +82,6 @@ const works = [
     categories: ["illustration"],
     series: ["無色透名美術館"],
     image: "images/musyokutoumei3_3.jpg",
-    page: "works/musyokutoumei3_3.html",
   
     content: [
       {
@@ -122,7 +119,6 @@ const works = [
     categories: ["illustration"],
     series: ["無色透名美術館"],
     image: "images/musyokutoumei3_2.jpg",
-    page: "works/musyokutoumei3_2.html",
 
          content: [
       {
@@ -160,7 +156,6 @@ const works = [
     categories: ["animation"],
     series: [],
     image: "images/animation_1.jpg",
-    page: "works/animation_1.html",
 
     content: [
       {
@@ -187,7 +182,6 @@ const works = [
     categories: ["music"],
     series: ["VOCALOID楽曲", "オリジナル曲α"],
     image: "images/vocaloid_1.jpg",
-    page: "works/vocaloid_1.html",
 
           content: [
       {
