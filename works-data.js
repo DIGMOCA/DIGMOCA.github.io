@@ -418,7 +418,7 @@ const works = [
     date: "2023-09-25",
     categories: ["music"],
     series: [],
-    image: "instrumental_1.jpg",
+    image: "images/instrumental_1.jpg",
 
           content: [
       {
