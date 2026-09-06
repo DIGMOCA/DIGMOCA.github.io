@@ -267,6 +267,31 @@ const works = [
     ],
   },
 
+              {
+    id: "illust_piapro_",
+    title: "え？",
+    date: "2025-09-21",
+    categories: ["illustration"],
+    series: ["ピアプロイラスト"],
+    image: "images/illust_piapro_5.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_piapro_5.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "piapro",
+        url: "https://piapro.jp/t/tlbv",
+      },
+    ],
+  },
+
          {
     id: "illust_action_5",
     title: "ダッシュ！",
@@ -381,6 +406,31 @@ const works = [
       },
     ],
   },
+
+            {
+    id: "illust_piapro_4",
+    title: "バーン",
+    date: "2025-03-02",
+    categories: ["illustration"],
+    series: ["ピアプロイラスト"],
+    image: "images/illust_piapro_4.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_piapro_4.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "piapro",
+        url: "https://piapro.jp/t/Ys3q",
+      },
+    ],
+  },
   
     {
     id: "vocaloid_7",
@@ -484,6 +534,56 @@ const works = [
         type: "link",
         label: "Instagram",
         url: "https://www.instagram.com/p/CyQimEuhyBk/?hl=ja",
+      },
+    ],
+  },
+
+          {
+    id: "illust_piapro_3",
+    title: "ヘッドスパ",
+    date: "2023-10-06",
+    categories: ["illustration"],
+    series: ["ピアプロイラスト"],
+    image: "images/illust_piapro_3.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_piapro_3.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "piapro",
+        url: "https://piapro.jp/t/_emA",
+      },
+    ],
+  },
+
+        {
+    id: "illust_piapro_2",
+    title: "1回しかしませんのでよーく見ててください。",
+    date: "2023-10-03",
+    categories: ["illustration"],
+    series: ["ピアプロイラスト"],
+    image: "images/illust_piapro_2.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_piapro_2.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "piapro",
+        url: "https://piapro.jp/t/IIrS",
       },
     ],
   },
@@ -735,6 +835,31 @@ const works = [
         type: "link",
         label: "Instagram",
         url: "https://www.instagram.com/p/CfEr-aPrML1/",
+      },
+    ],
+  },
+
+      {
+    id: "illust_piapro_1",
+    title: "ブルーライト",
+    date: "2022-06-17",
+    categories: ["illustration"],
+    series: ["ピアプロイラスト"],
+    image: "images/illust_piapro_1.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_piapro_1.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "piapro",
+        url: "https://piapro.jp/t/MWnS",
       },
     ],
   },
