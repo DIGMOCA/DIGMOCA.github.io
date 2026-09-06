@@ -161,6 +161,23 @@ const works = [
     series: [],
     image: "images/animation_1.jpg",
     page: "works/animation_1.html",
+
+    content: [
+      {
+    type: "video",
+    src: "videos/animation_1.mp4"
+      },
+      {
+        type: "text",
+        text: " くるくる回るアニメーションです。",
+      },
+      {
+        type: "link",
+        label: "TikTok",
+        url: "https://www.tiktok.com/@digmoca/video/7295720782368476434?lang=ja-JP",
+      },
+     
+    ],
   },
 
   {
@@ -172,7 +189,7 @@ const works = [
     image: "images/vocaloid_1.jpg",
     page: "works/vocaloid_1.html",
 
-             content: [
+          content: [
       {
         type: "youtube",
         id: "lQKqPBJ9H-0"
