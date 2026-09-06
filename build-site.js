@@ -176,6 +176,7 @@ function renderContent(
         new Set([
           "image",
           "youtube",
+          "niconico",
           "tiktok",
           "video",
           "audio"
