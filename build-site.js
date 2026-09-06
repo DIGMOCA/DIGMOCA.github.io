@@ -663,6 +663,7 @@ function copySiteFiles() {
       ".github",
       "_site",
       "works",
+      "contents",
       "node_modules",
       "build-site.js",
       "README.md"
