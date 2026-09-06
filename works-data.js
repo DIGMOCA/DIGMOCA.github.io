@@ -21,7 +21,7 @@ const works = [
     page: "works/musyokutoumei3_4.html",
   },
 
-  {
+   {
     id: "musyokutoumei3_3",
     title: "【無色透名美術館】黄昏に染まる",
     date: "2026-05-02",
@@ -29,31 +29,34 @@ const works = [
     series: ["無色透名美術館"],
     image: "images/musyokutoumei3_3.jpg",
     page: "works/musyokutoumei3_3.html",
-
-    content: [
-  {
-    type: "text",
-    text: "無色透名祭３で投稿された「黄昏に染まる / 重音テト」のファンアートです。"
-  },
-    {
-    type: "text-link",
-    before: "素敵な楽曲は",
-    label: "こちら",
-    url: "https://www.nicovideo.jp/watch/so45511807",
-    after: ""
-  },
-   {
-    type: "link",
-    label: "Pixiv",
-    url: "https://www.pixiv.net/artworks/144257619"
-  },
- {
-    type: "link",
-    label: "無色透名祭３",
-    url: "https://site.nicovideo.jp/mushokutomeisai/2025/"
-  },
-
   
+    content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei3_3.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭３で投稿された「黄昏に染まる / 重音テト」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so45511807",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "Pixiv",
+        url: "https://www.pixiv.net/artworks/144257619",
+      },
+      {
+        type: "link",
+        label: "無色透名祭３",
+        url: "https://site.nicovideo.jp/mushokutomeisai/2025/",
+      },
+    ],
   },
 
     {
@@ -71,7 +74,7 @@ const works = [
     title: "くるくる",
     date: "2023-10-30",
     categories: ["animation"],
-    series: [""],
+    series: [],
     image: "images/animation_1.jpg",
     page: "works/animation_1.html",
   },
