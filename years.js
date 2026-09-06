@@ -1,8 +1,12 @@
 const yearsList =
-  document.getElementById("years-list");
+  document.getElementById(
+    "years-list"
+  );
 
 const yearFilters =
-  document.getElementById("year-filters");
+  document.getElementById(
+    "year-filters"
+  );
 
 
 const categoryNames = {
@@ -16,47 +20,70 @@ const categoryNames = {
 };
 
 
-// ==============================
-// 作品を年代ごとに分類
-// ==============================
+// ========================================
+// idから作品ページを生成
+// ========================================
+
+function getWorkPage(work) {
+
+  return `works/${work.id}.html`;
+
+}
+
+
+// ========================================
+// 年代ごとに分類
+// ========================================
 
 const worksByYear = {};
 
+
 works.forEach(work => {
 
-  if (!work.date) {
-    return;
-  }
+  if (!work.date) return;
+
 
   const year =
-    work.date.slice(0, 4);
+    work.date.slice(
+      0,
+      4
+    );
 
-  if (!worksByYear[year]) {
+
+  if (
+    !worksByYear[year]
+  ) {
+
     worksByYear[year] = [];
+
   }
 
-  worksByYear[year].push(work);
+
+  worksByYear[
+    year
+  ].push(work);
 
 });
 
 
-// ==============================
-// 年代を新しい順に並べる
-// ==============================
-
 const years =
-  Object.keys(worksByYear)
-    .sort((a, b) => {
-      return Number(b) - Number(a);
-    });
+  Object.keys(
+    worksByYear
+  )
+  .sort(
+    (a, b) =>
+      Number(b) -
+      Number(a)
+  );
 
 
-let currentYear = "all";
+let currentYear =
+  "all";
 
 
-// ==============================
-// フィルター作成
-// ==============================
+// ========================================
+// 年代フィルター
+// ========================================
 
 function createYearFilters() {
 
@@ -64,33 +91,51 @@ function createYearFilters() {
 
 
   const allButton =
-    document.createElement("button");
+    document.createElement(
+      "button"
+    );
+
 
   allButton.className =
     "year-filter-button active";
 
-  allButton.textContent = "ALL";
 
-  allButton.dataset.year = "all";
+  allButton.textContent =
+    "ALL";
 
-  yearFilters.appendChild(allButton);
+
+  allButton.dataset.year =
+    "all";
+
+
+  yearFilters.appendChild(
+    allButton
+  );
 
 
   years.forEach(year => {
 
     const button =
-      document.createElement("button");
+      document.createElement(
+        "button"
+      );
+
 
     button.className =
       "year-filter-button";
 
+
     button.textContent =
       year;
+
 
     button.dataset.year =
       year;
 
-    yearFilters.appendChild(button);
+
+    yearFilters.appendChild(
+      button
+    );
 
   });
 
@@ -112,11 +157,18 @@ function createYearFilters() {
 
 
         buttons.forEach(btn => {
-          btn.classList.remove("active");
+
+          btn.classList.remove(
+            "active"
+          );
+
         });
 
 
-        button.classList.add("active");
+        button.classList.add(
+          "active"
+        );
+
 
         renderYears();
 
@@ -128,9 +180,9 @@ function createYearFilters() {
 }
 
 
-// ==============================
-// 年代一覧表示
-// ==============================
+// ========================================
+// 年代表示
+// ========================================
 
 function renderYears() {
 
@@ -148,43 +200,60 @@ function renderYears() {
 
 
     const section =
-      document.createElement("section");
+      document.createElement(
+        "section"
+      );
 
-    section.className = "year";
+
+    section.className =
+      "year";
 
 
     const heading =
-      document.createElement("h3");
+      document.createElement(
+        "h3"
+      );
+
 
     heading.textContent =
       year;
 
-    section.appendChild(heading);
+
+    section.appendChild(
+      heading
+    );
 
 
     const list =
-      document.createElement("div");
+      document.createElement(
+        "div"
+      );
+
 
     list.className =
       "year-works";
 
 
     const sortedWorks =
-      [...worksByYear[year]]
-        .sort((a, b) => {
-
-          return (
-            new Date(b.date) -
-            new Date(a.date)
-          );
-
-        });
+      [
+        ...worksByYear[
+          year
+        ]
+      ]
+      .sort(
+        (a, b) =>
+          new Date(b.date) -
+          new Date(a.date)
+      );
 
 
     sortedWorks.forEach(work => {
 
       const item =
-        document.createElement("article");
+        document.createElement(
+          "article"
+        );
+
 
       item.className =
         "year-work";
@@ -193,17 +262,23 @@ function renderYears() {
       const categoryText =
         work.categories
           .map(category =>
-            categoryNames[category] ||
+            categoryNames[
+              category
+            ] ||
             category
           )
           .join(" / ");
+
+
+      const workPage =
+        getWorkPage(work);
 
 
       item.innerHTML = `
 
         <a
           class="year-thumbnail"
-          href="${work.page}"
+          href="${workPage}"
         >
           <img
             src="${work.image}"
@@ -212,10 +287,12 @@ function renderYears() {
           >
         </a>
 
-        <div class="year-work-info">
+        <div
+          class="year-work-info"
+        >
 
           <h4>
-            <a href="${work.page}">
+            <a href="${workPage}">
               ${work.title}
             </a>
           </h4>
@@ -229,23 +306,26 @@ function renderYears() {
       `;
 
 
-      list.appendChild(item);
+      list.appendChild(
+        item
+      );
 
     });
 
 
-    section.appendChild(list);
+    section.appendChild(
+      list
+    );
 
-    yearsList.appendChild(section);
+
+    yearsList.appendChild(
+      section
+    );
 
   });
 
 }
 
-
-// ==============================
-// 初期表示
-// ==============================
 
 createYearFilters();
 renderYears();
