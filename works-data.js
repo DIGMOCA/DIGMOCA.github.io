@@ -213,6 +213,36 @@ const works = [
   },
 
   {
+    id: "vocaloid_3",
+    title: "Shall 僕 Dance / 初音ミク",
+    date: "2023-04-27",
+    categories: ["music"],
+    series: ["VOCALOID楽曲", "オリジナル曲β"],
+    image: "images/vocaloid_3.jpg",
+
+          content: [
+      {
+        type: "youtube",
+        id: "VQz7fvqGdhk"
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://www.youtube.com/watch?v=VQz7fvqGdhk",
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/sm42141184",
+      },
+    ],
+  },
+  
+  {
     id: "vocaloid_2",
     title: "ウドゥのなる木 / 初音ミク",
     date: "2023-04-07",
@@ -227,7 +257,7 @@ const works = [
       },
       {
         type: "text",
-        text: "「ウドゥのなる木」という曲です。",
+        text: "",
       },
       {
         type: "link",
