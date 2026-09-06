@@ -21,12 +21,12 @@ const works = [
         type: "text-link",
         before: "素敵な楽曲は",
         label: "こちら",
-        url: "ttps://www.nicovideo.jp/watch/so45516248",
+        url: "https://www.nicovideo.jp/watch/so45516248",
         after: "",
       },
       {
         type: "link",
-        label: "Pixiv",
+        label: "pixiv",
         url: "https://www.pixiv.net/artworks/147519909",
       },
       {
@@ -94,7 +94,7 @@ const works = [
       },
       {
         type: "link",
-        label: "Pixiv",
+        label: "pixiv",
         url: "https://www.pixiv.net/artworks/145133420",
       },
       {
@@ -131,7 +131,7 @@ const works = [
       },
       {
         type: "link",
-        label: "Pixiv",
+        label: "pixiv",
         url: "https://www.pixiv.net/artworks/144257619",
       },
       {
@@ -194,7 +194,7 @@ const works = [
       },
       {
         type: "link",
-        label: "Pixiv",
+        label: "pixiv",
         url: "https://www.pixiv.net/artworks/138330972",
       },
       {
@@ -231,7 +231,7 @@ const works = [
       },
       {
         type: "link",
-        label: "Pixiv",
+        label: "pixiv",
         url: "https://www.pixiv.net/artworks/137854423",
       },
       {
@@ -889,6 +889,31 @@ const works = [
     ],
   },
 
+        {
+    id: "illust_fanart_2",
+    title: "ワルイージ",
+    date: "2022-06-16",
+    categories: ["illustration"],
+    series: ["ファンアート"],
+    image: "images/illust_fanart_2.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_fanart_2r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "pixiv",
+        url: "https://www.pixiv.net/artworks/99079360",
+      },
+    ],
+  },
+
            {
     id: "illust_season_1",
     title: "夏の巨人",
@@ -1035,6 +1060,31 @@ const works = [
         type: "link",
         label: "Instagram",
         url: "https://www.instagram.com/p/CeWTvz6LIvm/",
+      },
+    ],
+  },
+
+      {
+    id: "illust_fanart_1",
+    title: "飲み物を飲む鏡音リン",
+    date: "2022-05-04",
+    categories: ["illustration"],
+    series: ["ファンアート"],
+    image: "images/illust_fanart_1.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_fanart_1r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "pixiv",
+        url: "https://www.pixiv.net/artworks/98102200",
       },
     ],
   },
