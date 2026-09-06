@@ -530,3 +530,15 @@ footer {
   display: inline-block;
   margin: 0px 16px 0px 0;
 }
+
+.soundcloud-embed {
+  width: 100%;
+  margin: 24px 0;
+}
+
+.soundcloud-embed iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+}
