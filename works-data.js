@@ -480,6 +480,57 @@ const works = [
       },
     ],
   },
+  
+    {
+    id: "threehour_2",
+    title: "【スリクリ】善処します / 宮舞モカ",
+    date: "2025-03-31",
+    categories: ["music"],
+    series: ["スリクリ"],
+    image: "images/threehour_2.jpg",
+
+          content: [
+      {
+        type: "youtube",
+        id: "CQck5Dirgh0"
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://www.youtube.com/watch?v=CQck5Dirgh0",
+      },
+    ],
+  },
+  
+
+    {
+    id: "threehour_1",
+    title: "【スリクリ】RENT TO OWN FOR YOU",
+    date: "2025-03-30",
+    categories: ["music"],
+    series: ["スリクリ"],
+    image: "images/threehour_1.jpg",
+
+          content: [
+      {
+        type: "youtube",
+        id: "gUG8ZO56l1k"
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://www.youtube.com/watch?v=gUG8ZO56l1k",
+      },
+    ],
+  },
 
           {
     id: "musyokutoumei2_4",
