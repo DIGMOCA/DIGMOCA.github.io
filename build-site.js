@@ -32,6 +32,17 @@ const categoryNames = {
 
 
 // ========================================
+// idから作品ページを生成
+// ========================================
+
+function getWorkPage(work) {
+
+  return `works/${work.id}.html`;
+
+}
+
+
+// ========================================
 // HTMLエスケープ
 // ========================================
 
@@ -65,18 +76,15 @@ function loadWorks() {
       "utf8"
     );
 
-
   const sandbox = {};
 
   vm.createContext(sandbox);
-
 
   const works =
     vm.runInContext(
       `${source}\nworks;`,
       sandbox
     );
-
 
   if (!Array.isArray(works)) {
 
@@ -85,7 +93,6 @@ function loadWorks() {
     );
 
   }
-
 
   return works;
 
@@ -111,7 +118,6 @@ function relativeURL(
 
 // ========================================
 // 絶対URL生成
-// OGP用
 // ========================================
 
 function absoluteURL(
@@ -130,9 +136,11 @@ function absoluteURL(
 // 作品コンテンツ生成
 // ========================================
 
-function renderContent(
-  work
-) {
+function renderContent(work) {
+
+  const workPage =
+    getWorkPage(work);
+
 
   let contents =
     Array.isArray(work.content)
@@ -140,8 +148,8 @@ function renderContent(
       : [];
 
 
-  // content未指定なら
-  // サムネイル画像を作品画像として使う
+  // contentがない場合は
+  // imageを作品画像として自動表示
   if (
     contents.length === 0 &&
     work.image
@@ -161,6 +169,7 @@ function renderContent(
   return contents
     .map(item => {
 
+
       // ------------------------
       // IMAGE
       // ------------------------
@@ -171,7 +180,7 @@ function renderContent(
 
         const src =
           relativeURL(
-            work.page,
+            workPage,
             item.src
           );
 
@@ -253,7 +262,7 @@ function renderContent(
 
         const src =
           relativeURL(
-            work.page,
+            workPage,
             item.src
           );
 
@@ -285,7 +294,7 @@ function renderContent(
 
         const src =
           relativeURL(
-            work.page,
+            workPage,
             item.src
           );
 
@@ -320,14 +329,15 @@ function renderContent(
 
       }
 
+
       // ------------------------
       // TEXT + LINK
       // ------------------------
-      
+
       if (
         item.type === "text-link"
       ) {
-      
+
         return `
           <p class="work-text">
             ${escapeHTML(item.before || "")}<a
@@ -337,9 +347,8 @@ function renderContent(
             >${escapeHTML(item.label)}</a>${escapeHTML(item.after || "")}
           </p>
         `;
-      
+
       }
-            
 
 
       // ------------------------
@@ -366,7 +375,7 @@ function renderContent(
 
 
       // ------------------------
-      // 特殊な作品用
+      // 特殊HTML
       // ------------------------
 
       if (
@@ -390,9 +399,11 @@ function renderContent(
 // 作品HTML生成
 // ========================================
 
-function renderWorkPage(
-  work
-) {
+function renderWorkPage(work) {
+
+  const workPage =
+    getWorkPage(work);
+
 
   const title =
     escapeHTML(work.title);
@@ -416,7 +427,7 @@ function renderWorkPage(
 
   const canonicalURL =
     absoluteURL(
-      work.page
+      workPage
     );
 
 
@@ -439,35 +450,35 @@ function renderWorkPage(
 
   const stylesheet =
     relativeURL(
-      work.page,
+      workPage,
       "style.css"
     );
 
 
   const headerScript =
     relativeURL(
-      work.page,
+      workPage,
       "header.js"
     );
 
 
   const dataScript =
     relativeURL(
-      work.page,
+      workPage,
       "works-data.js"
     );
 
 
   const navigationScript =
     relativeURL(
-      work.page,
+      workPage,
       "work-navigation.js"
     );
 
 
   const footerScript =
     relativeURL(
-      work.page,
+      workPage,
       "footer.js"
     );
 
@@ -588,7 +599,7 @@ ${ogImageHTML}
 
 
 // ========================================
-// フォルダコピー
+// 通常ファイルコピー
 // ========================================
 
 function copySiteFiles() {
@@ -651,7 +662,7 @@ function copySiteFiles() {
 
 
 // ========================================
-// ビルド開始
+// ビルド
 // ========================================
 
 function build() {
@@ -660,8 +671,6 @@ function build() {
     "DIGMOCA ARCHIVE build start"
   );
 
-
-  // 古い生成結果を削除
 
   fs.rmSync(
     OUTPUT,
@@ -680,38 +689,35 @@ function build() {
   );
 
 
-  // 通常ファイルをコピー
-
   copySiteFiles();
 
-
-  // 作品情報を取得
 
   const works =
     loadWorks();
 
 
-  // 各作品ページを生成
-
   works.forEach(work => {
 
     if (
       !work.id ||
-      !work.title ||
-      !work.page
+      !work.title
     ) {
 
       throw new Error(
-        "id / title / page が不足している作品があります。"
+        "id / title が不足している作品があります。"
       );
 
     }
 
 
+    const workPage =
+      getWorkPage(work);
+
+
     const outputPath =
       path.join(
         OUTPUT,
-        ...work.page.split("/")
+        ...workPage.split("/")
       );
 
 
@@ -731,13 +737,11 @@ function build() {
 
 
     console.log(
-      `generated: ${work.page}`
+      `generated: ${workPage}`
     );
 
   });
 
-
-  // Jekyll処理を無効化
 
   fs.writeFileSync(
     path.join(
