@@ -27,48 +27,52 @@ const seriesData = [
     name: "オリジナル曲ζ",
     order: 7
   },
-  {
-    name: "無色透名美術館",
+    {
+    name: "スリクリ",
     order: 8
   },
-    {
-    name: "ファンアート",
+  {
+    name: "無色透名美術館",
     order: 9
   },
     {
-    name: "アクションシリーズ",
+    name: "ファンアート",
     order: 10
   },
     {
-    name: "時刻シリーズ",
+    name: "アクションシリーズ",
     order: 11
   },
     {
-    name: "季節シリーズ",
+    name: "時刻シリーズ",
     order: 12
   },
     {
-    name: "シーンシリーズ",
+    name: "季節シリーズ",
     order: 13
   },
     {
-    name: "月シリーズ",
+    name: "シーンシリーズ",
     order: 14
+  },
+    {
+    name: "月シリーズ",
+    order: 15
   },
       {
     name: "ピアプロイラスト",
-    order: 15
+    order: 16
   },
         {
     name: "1ページ漫画",
-    order: 16
+    order: 17
   },
   {
     name: "制作協力",
-    order: 17
+    order: 18
   },
     {
     name: "未分類",
-    order: 18
+    order: 19
   }
 ];
