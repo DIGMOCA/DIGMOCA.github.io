@@ -185,6 +185,31 @@ const works = [
       },
     ],
   },
+
+    {
+    id: "vocaloid_6",
+    title: "サイクロン真拳 / 初音ミク, 鏡音レン",
+    date: "2023-11-02",
+    categories: ["music"],
+    series: ["VOCALOID楽曲", "オリジナル曲γ"],
+    image: "images/vocaloid_6.jpg",
+
+          content: [
+      {
+        type: "niconico",
+        id: "so42899485",
+      },
+      {
+        type: "text",
+        text: "無色透名祭Ⅱ参加曲です。",
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/so42899485",
+      },
+    ],
+  },
   
   {
     id: "animation_1",
@@ -348,7 +373,7 @@ const works = [
       },
       {
         type: "text",
-        text: "ボカコレ2022 Autumn参加曲の「MIZU・UMI」です。",
+        text: "ボカコレ2022 Autumn参加曲です。",
       },
       {
         type: "link",
