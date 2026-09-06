@@ -142,6 +142,32 @@ const works = [
     ],
   },
 
+          {
+    id: "illust_time_3",
+    title: "午前10時",
+    date: "2026-04-19",
+    categories: ["illustration"],
+    series: ["時刻シリーズ"],
+    image: "images/illust_time_3.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_time_3r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Instagram",
+        url: "https://www.instagram.com/p/DXR6WUggeuv/",
+      },
+    ],
+  },
+
+
     {
     id: "musyokutoumei3_2",
     title: "【無色透名美術館】誤算",
@@ -237,6 +263,31 @@ const works = [
         type: "link",
         label: "ニコニコ動画",
         url: "https://www.nicovideo.jp/watch/so45521072",
+      },
+    ],
+  },
+
+         {
+    id: "illust_action_5",
+    title: "ダッシュ！",
+    date: "2025-08-31",
+    categories: ["illustration"],
+    series: ["アクションシリーズ"],
+    image: "images/illust_action_5.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_action_5r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Instagram",
+        url: "https://www.instagram.com/p/DOBSXG8gcyP/",
       },
     ],
   },
@@ -412,6 +463,31 @@ const works = [
     ],
   },
 
+       {
+    id: "illust_action_4",
+    title: "スピン！",
+    date: "2023-10-11",
+    categories: ["illustration"],
+    series: ["アクションシリーズ"],
+    image: "images/illust_action_4.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_action_4r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Instagram",
+        url: "https://www.instagram.com/p/CyQimEuhyBk/?hl=ja",
+      },
+    ],
+  },
+
   {
     id: "instrumental_1",
     title: "multiplex sequence",
@@ -433,6 +509,31 @@ const works = [
         type: "link",
         label: "SoundCloud",
         url: "https://soundcloud.com/user-913066743-790996379/multiplex-sequence-1",
+      },
+    ],
+  },
+
+             {
+    id: "illust_season_2",
+    title: "盆踊り",
+    date: "2023-09-24",
+    categories: ["illustration"],
+    series: ["季節シリーズ"],
+    image: "images/illust_season_2.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_season_2r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Instagram",
+        url: "https://www.instagram.com/p/CxiiY-6hsr4/",
       },
     ],
   },
@@ -613,6 +714,31 @@ const works = [
     ],
   },
 
+               {
+    id: "illust_month_1",
+    title: "6月",
+    date: "2022-06-22",
+    categories: ["illustration"],
+    series: ["月シリーズ"],
+    image: "images/illust_month_1.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_month_1r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Instagram",
+        url: "https://www.instagram.com/p/CfEr-aPrML1/",
+      },
+    ],
+  },
+
              {
     id: "illust_scene_1",
     title: "水中探索",
@@ -694,12 +820,12 @@ const works = [
     date: "2022-06-08",
     categories: ["illustration"],
     series: ["アクションシリーズ"],
-    image: "images/illust_action_8.jpg",
+    image: "images/illust_action_3.jpg",
     
      content: [
       {
         type: "image",
-        src: "images/illust_action_8r.jpg",
+        src: "images/illust_action_3r.jpg",
       },
       {
         type: "text",
