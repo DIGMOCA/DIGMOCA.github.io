@@ -412,6 +412,7 @@ const works = [
     ],
   },
 
+  {
     id: "instrumental_1",
     title: "multiplex sequence",
     date: "2023-09-25",
