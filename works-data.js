@@ -213,6 +213,36 @@ const works = [
   },
 
   {
+    id: "vocaloid_2",
+    title: "ウドゥのなる木 / 初音ミク",
+    date: "2023-04-078",
+    categories: ["music"],
+    series: ["VOCALOID楽曲", "オリジナル曲α"],
+    image: "images/vocaloid_21.jpg",
+
+          content: [
+      {
+        type: "youtube",
+        id: "lgFfbMJs7sk"
+      },
+      {
+        type: "text",
+        text: "「ウドゥのなる木」という曲です。",
+      },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://www.youtube.com/watch?v=lgFfbMJs7sk",
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/sm42049475",
+      },
+    ],
+  },
+  
+  {
     id: "vocaloid_1",
     title: "MIZU・UMI / 東北きりたん",
     date: "2022-10-08",
