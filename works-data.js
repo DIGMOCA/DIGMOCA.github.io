@@ -37,6 +37,36 @@ const works = [
     ],
   },
 
+       {
+    id: "vocaloid_12",
+    title: "サイバネティックス＆コンストラクション / 宮舞モカ",
+    date: "2025-06-23",
+    categories: ["music"],
+    series: ["VOCALOID楽曲", "オリジナル曲ζ"],
+    image: "images/vocaloid_12.jpg",
+
+          content: [
+      {
+        type: "youtube",
+        id: "kX3PKmyzb3I"
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://www.youtube.com/watch?v=kX3PKmyzb3I,
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/sm46467299",
+      },
+    ],
+  },
+  
 
   {
     id: "musyokutoumei3_4",
@@ -182,6 +212,151 @@ const works = [
         type: "link",
         label: "無色透名祭３",
         url: "https://site.nicovideo.jp/mushokutomeisai/2025/",
+      },
+    ],
+  },
+
+      {
+    id: "vocaloid_11",
+    title: "閲覧注意！挨拶大戦争 / 東北きりたん",
+    date: "2025-11-21",
+    categories: ["music"],
+    series: ["VOCALOID楽曲", "オリジナル曲ε"],
+    image: "images/vocaloid_11.jpg",
+
+          content: [
+      {
+        type: "niconico",
+        id: "so45521072",
+      },
+      {
+        type: "text",
+        text: "無色透名祭３参加曲です。",
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/so45521072",
+      },
+    ],
+  },
+
+       {
+    id: "vocaloid_10",
+    title: "我重う、ゆえに割れあり / 鏡音リン",
+    date: "2025-08-23",
+    categories: ["music"],
+    series: ["VOCALOID楽曲", "オリジナル曲β"],
+    image: "images/vocaloid_10.jpg",
+
+          content: [
+      {
+        type: "youtube",
+        id: "VbzYikAoE4g"
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://www.youtube.com/watch?v=VbzYikAoE4g,
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/sm45325877",
+      },
+    ],
+  },
+
+      {
+    id: "vocaloid_9",
+    title: "災いの元のくせに必須がすぎる！！！！！ / 宮舞モカ",
+    date: "2025-07-23",
+    categories: ["music"],
+    series: ["VOCALOID楽曲", "オリジナル曲β"],
+    image: "images/vocaloid_9.jpg",
+
+          content: [
+      {
+        type: "youtube",
+        id: "H5Z3zejJ1Qw"
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://www.youtube.com/watch?v=H5Z3zejJ1Qw",
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/sm45217899",
+      },
+    ],
+  },
+
+    {
+    id: "vocaloid_8",
+    title: "デイリーディスポーザー / 鏡音レン_宮舞モカ",
+    date: "2025-04-14",
+    categories: ["music"],
+    series: ["VOCALOID楽曲", "オリジナル曲ε"],
+    image: "images/vocaloid_8.jpg",
+
+          content: [
+      {
+        type: "youtube",
+        id: "UL98VOi7bEQ"
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://www.youtube.com/watch?v=UL98VOi7bEQ",
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/sm44877251",
+      },
+    ],
+  },
+  
+    {
+    id: "vocaloid_7",
+    title: "死神の漫才 / 宮舞モカ",
+    date: "2025-02-22",
+    categories: ["music"],
+    series: ["VOCALOID楽曲", "オリジナル曲δ"],
+    image: "images/vocaloid_7.jpg",
+
+          content: [
+      {
+        type: "youtube",
+        id: "w3L2YOWVn58"
+      },
+      {
+        type: "text",
+        text: "ボカコレ2025 Winter参加曲です。",
+      },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://www.youtube.com/watch?v=w3L2YOWVn58",
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/sm44683683",
       },
     ],
   },
