@@ -412,6 +412,30 @@ const works = [
     ],
   },
 
+    id: "instrumental_1",
+    title: "multiplex sequence",
+    date: "2023-09-25",
+    categories: ["music"],
+    series: [],
+    image: "instrumental_1",
+
+          content: [
+      {
+        type: "soundcloud",
+        embedUrl: "ここにSoundCloudの埋め込みURL",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "SoundCloud",
+        url: "https://soundcloud.com/user-913066743-790996379/multiplex-sequence-1",
+      },
+    ],
+  },
+  
   {
     id: "vocaloid_5",
     title: "ヴェルベールディング・クリエールン / 初音ミク_東北きりたん",
