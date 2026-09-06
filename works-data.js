@@ -557,6 +557,32 @@ const works = [
       },
     ],
   },
+
+      {
+    id: "assist_1",
+    title: "ロストハイウェイ",
+    date: "2022-12-30",
+    categories: ["video"],
+    series: ["制作協力"],
+    image: "images/assist_1.jpg",
+
+          content: [
+      {
+        type: "niconico",
+        id: "sm41579583",
+      },
+      {
+        type: "text",
+        text: "Lyric、Music、Mix、Vocal Edit：Monk
+          動画を制作しました。",
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/sm41579583",
+      },
+    ],
+  },
   
   {
     id: "vocaloid_1",
