@@ -171,6 +171,27 @@ const works = [
     series: ["VOCALOID楽曲", "オリジナル曲α"],
     image: "images/vocaloid_1.jpg",
     page: "works/vocaloid_1.html",
+
+             content: [
+      {
+        type: "youtube",
+        id: "lQKqPBJ9H-0"
+      },
+      {
+        type: "text",
+        text: "ボカコレ2022 Autumn参加曲の「MIZU・UMI」です。",
+      },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://www.youtube.com/watch?v=lQKqPBJ9H-0",
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/sm41198086",
+      },
+    ],
   },
   
 ];
