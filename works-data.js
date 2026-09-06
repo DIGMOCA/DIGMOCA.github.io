@@ -613,6 +613,156 @@ const works = [
     ],
   },
 
+             {
+    id: "illust_scene_1",
+    title: "水中探索",
+    date: "2022-06-16",
+    categories: ["illustration"],
+    series: ["シーンシリーズ"],
+    image: "images/illust_scene_1.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_scene_1.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Instagram",
+        url: "https://www.instagram.com/p/Ce1QlDpL1TE/",
+      },
+    ],
+  },
+
+           {
+    id: "illust_season_1",
+    title: "夏の巨人",
+    date: "2022-06-12",
+    categories: ["illustration"],
+    series: ["季節シリーズ"],
+    image: "images/illust_season_1.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_season_1r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Instagram",
+        url: "https://www.instagram.com/p/CetWsGVLLym/",
+      },
+    ],
+  },
+
+          {
+    id: "illust_time_2",
+    title: "午前2時",
+    date: "2022-06-11",
+    categories: ["illustration"],
+    series: ["時刻シリーズ"],
+    image: "images/illust_time_2.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_time_2r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Instagram",
+        url: "https://www.instagram.com/p/CepLz9VpiPW/",
+      },
+    ],
+  },
+
+     {
+    id: "illust_action_3",
+    title: "キック！",
+    date: "2022-06-08",
+    categories: ["illustration"],
+    series: ["アクションシリーズ"],
+    image: "images/illust_action_8.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_action_8r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Instagram",
+        url: "https://www.instagram.com/p/Ceimk04rpN7/",
+      },
+    ],
+  },
+
+        {
+    id: "illust_time_1",
+    title: "午後6時",
+    date: "2022-06-07",
+    categories: ["illustration"],
+    series: ["時刻シリーズ"],
+    image: "images/illust_time_1.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_time_1r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Instagram",
+        url: "https://www.instagram.com/p/Cef-y2Ar4o7/",
+      },
+    ],
+  },
+
+      {
+    id: "illust_action_2",
+    title: "バランス！",
+    date: "2022-06-05",
+    categories: ["illustration"],
+    series: ["アクションシリーズ"],
+    image: "images/illust_action_2.jpg",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/illust_action_2r.jpg",
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Instagram",
+        url: "https://www.instagram.com/p/CeaaPRiuh-u/",
+      },
+    ],
+  },
+
     {
     id: "illust_action_1",
     title: "ジャンプ！",
