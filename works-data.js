@@ -212,6 +212,36 @@ const works = [
     ],
   },
 
+    {
+    id: "vocaloid_4",
+    title: "聖戦地獄 / 初音ミク",
+    date: "2023-05-10",
+    categories: ["music"],
+    series: ["VOCALOID楽曲", "オリジナル曲α"],
+    image: "images/vocaloid_4.jpg",
+
+          content: [
+      {
+        type: "youtube",
+        id: "Ux-4OOPU8-E"
+      },
+      {
+        type: "text",
+        text: "",
+      },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://www.youtube.com/watch?v=Ux-4OOPU8-E",
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/sm42203815",
+      },
+    ],
+  },
+
   {
     id: "vocaloid_3",
     title: "Shall 僕 Dance / 初音ミク",
