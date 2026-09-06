@@ -8,6 +8,34 @@ const works = [
     series: ["無色透名美術館"],
     image: "images/musyokutoumei3_5.jpg",
     page: "works/musyokutoumei3_5.html",
+
+     content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei3_3.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭３で投稿された「黄昏に染まる / 重音テト」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so45511807",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "Pixiv",
+        url: "https://www.pixiv.net/artworks/144257619",
+      },
+      {
+        type: "link",
+        label: "無色透名祭３",
+        url: "https://site.nicovideo.jp/mushokutomeisai/2025/",
+      },
+    ],
   },
 
 
@@ -19,6 +47,34 @@ const works = [
     series: ["無色透名美術館"],
     image: "images/musyokutoumei3_4.jpg",
     page: "works/musyokutoumei3_4.html",
+    
+     content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei3_4.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭３で投稿された「とか、いわな / 雨衣」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so45516705",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "Pixiv",
+        url: "https://www.pixiv.net/artworks/145133420",
+      },
+      {
+        type: "link",
+        label: "無色透名祭３",
+        url: "https://site.nicovideo.jp/mushokutomeisai/2025/",
+      },
+    ],
   },
 
    {
