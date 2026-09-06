@@ -32,39 +32,43 @@ const seriesData = [
     order: 8
   },
     {
-    name: "時刻シリーズ",
+    name: "ファンアート",
     order: 9
   },
     {
-    name: "季節シリーズ",
+    name: "アクションシリーズ",
     order: 10
   },
     {
-    name: "シーンシリーズ",
+    name: "時刻シリーズ",
     order: 11
   },
     {
-    name: "月シリーズ",
+    name: "季節シリーズ",
     order: 12
   },
     {
-    name: "イベントシリーズ",
+    name: "シーンシリーズ",
     order: 13
+  },
+    {
+    name: "月シリーズ",
+    order: 14
   },
       {
     name: "ピアプロイラスト",
-    order: 14
+    order: 15
   },
         {
     name: "1ページ漫画",
-    order: 15
+    order: 16
   },
   {
     name: "制作協力",
-    order: 16
+    order: 17
   },
     {
     name: "未分類",
-    order: 17
+    order: 18
   }
 ];
