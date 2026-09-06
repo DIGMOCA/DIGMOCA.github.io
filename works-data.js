@@ -40,7 +40,7 @@ const works = [
        {
     id: "vocaloid_12",
     title: "サイバネティックス＆コンストラクション / 宮舞モカ",
-    date: "2025-06-23",
+    date: "2026-06-23",
     categories: ["music"],
     series: ["VOCALOID楽曲", "オリジナル曲ζ"],
     image: "images/vocaloid_12.jpg",
