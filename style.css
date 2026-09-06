@@ -497,3 +497,35 @@ footer {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
+
+
+.work-detail-meta {
+  margin: -16px 0 32px;
+  font-size: 13px;
+  color: #777;
+}
+
+.work-content {
+  width: 100%;
+}
+
+.work-detail-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 24px auto;
+}
+
+.work-audio {
+  display: block;
+  width: 100%;
+  margin: 24px 0;
+}
+
+.work-text {
+  line-height: 1.8;
+}
+
+.work-external-link {
+  margin: 24px 0;
+}
