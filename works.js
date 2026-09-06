@@ -16,14 +16,26 @@ const categoryNames = {
 };
 
 
-// ==============================
-// URLからカテゴリを取得
-// ==============================
+// ========================================
+// idから作品ページを生成
+// ========================================
+
+function getWorkPage(work) {
+
+  return `works/${work.id}.html`;
+
+}
+
+
+// ========================================
+// URLからカテゴリ取得
+// ========================================
 
 const params =
   new URLSearchParams(
     window.location.search
   );
+
 
 const requestedCategory =
   params.get("category");
@@ -35,14 +47,16 @@ const validCategories =
 
 let currentFilter =
   requestedCategory &&
-  validCategories.includes(requestedCategory)
+  validCategories.includes(
+    requestedCategory
+  )
     ? requestedCategory
     : "all";
 
 
-// ==============================
+// ========================================
 // 作品表示
-// ==============================
+// ========================================
 
 function renderWorks() {
 
@@ -51,10 +65,12 @@ function renderWorks() {
 
   const sortedWorks =
     [...works].sort((a, b) => {
+
       return (
         new Date(b.date) -
         new Date(a.date)
       );
+
     });
 
 
@@ -62,7 +78,9 @@ function renderWorks() {
 
     if (
       currentFilter !== "all" &&
-      !work.categories.includes(currentFilter)
+      !work.categories.includes(
+        currentFilter
+      )
     ) {
       return;
     }
@@ -83,12 +101,14 @@ function renderWorks() {
         .join(" / ");
 
 
-    // ALLならパラメータなし
-    // カテゴリ選択中ならcategoryを引き継ぐ
+    const workPage =
+      getWorkPage(work);
+
+
     const workURL =
       currentFilter === "all"
-        ? work.page
-        : `${work.page}?category=${encodeURIComponent(currentFilter)}`;
+        ? workPage
+        : `${workPage}?category=${encodeURIComponent(currentFilter)}`;
 
 
     article.innerHTML = `
@@ -121,9 +141,9 @@ function renderWorks() {
 }
 
 
-// ==============================
-// フィルターボタン
-// ==============================
+// ========================================
+// フィルター
+// ========================================
 
 filterButtons.forEach(button => {
 
@@ -131,11 +151,21 @@ filterButtons.forEach(button => {
     button.dataset.filter;
 
 
-  if (filter === currentFilter) {
-    button.classList.add("active");
+  if (
+    filter === currentFilter
+  ) {
+
+    button.classList.add(
+      "active"
+    );
+
   }
   else {
-    button.classList.remove("active");
+
+    button.classList.remove(
+      "active"
+    );
+
   }
 
 
@@ -148,15 +178,22 @@ filterButtons.forEach(button => {
 
 
       filterButtons.forEach(btn => {
-        btn.classList.remove("active");
+
+        btn.classList.remove(
+          "active"
+        );
+
       });
 
 
-      button.classList.add("active");
+      button.classList.add(
+        "active"
+      );
 
 
-      // URLも現在の選択状態に合わせる
-      if (currentFilter === "all") {
+      if (
+        currentFilter === "all"
+      ) {
 
         history.replaceState(
           null,
