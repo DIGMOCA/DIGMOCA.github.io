@@ -517,8 +517,24 @@ function renderWorkPage(work) {
     );
 
 
-  const content =
-    renderContent(work);
+const content =
+  renderContent(work);
+
+
+const extensionContent =
+  loadExtensionContent(work);
+
+
+const extensionHTML =
+  extensionContent
+    ? `
+      <section class="work-extension">
+
+        ${extensionContent}
+
+      </section>
+    `
+    : "";
 
 
   return `<!DOCTYPE html>
