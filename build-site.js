@@ -320,6 +320,27 @@ function renderContent(
 
       }
 
+      // ------------------------
+      // TEXT + LINK
+      // ------------------------
+      
+      if (
+        item.type === "text-link"
+      ) {
+      
+        return `
+          <p class="work-text">
+            ${escapeHTML(item.before || "")}<a
+              href="${escapeHTML(item.url)}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >${escapeHTML(item.label)}</a>${escapeHTML(item.after || "")}
+          </p>
+        `;
+      
+      }
+            
+
 
       // ------------------------
       // LINK
