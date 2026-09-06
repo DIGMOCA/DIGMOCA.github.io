@@ -374,20 +374,27 @@ function renderContent(
       }
 
 
+
+
       // ========================================
       // TEXT
       // ========================================
-
+      
       if (
         item.type === "text"
       ) {
-
+      
+        const text =
+          escapeHTML(item.text)
+            .replace(/\n/g, "<br>");
+      
+      
         return `
           <p>
-            ${escapeHTML(item.text)}
+            ${text}
           </p>
         `;
-
+      
       }
 
 
