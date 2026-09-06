@@ -482,6 +482,12 @@ function renderWorkPage(work) {
       "footer.js"
     );
 
+    const analyticsScript =
+    relativeURL(
+      workPage,
+      "analytics.js"
+    );
+
 
   const content =
     renderContent(work);
@@ -589,6 +595,7 @@ ${ogImageHTML}
   <script src="${escapeHTML(dataScript)}"></script>
   <script src="${escapeHTML(navigationScript)}"></script>
   <script src="${escapeHTML(footerScript)}"></script>
+  <script src="${escapeHTML(analyticsScript)}"></script>
 
 </body>
 
