@@ -141,42 +141,30 @@ function renderContent(
   filter = "all"
 ) {
 
-  const workPage =
-    getWorkPage(work);
-
-
-  let contents =
-    Array.isArray(work.content)
+  const content =
+    Array.isArray(work.content) &&
+    work.content.length > 0
       ? work.content
-      : [];
+      : work.image
+        ? [
+            {
+              type: "image",
+              src: work.image,
+              alt: work.title,
+            },
+          ]
+        : [];
 
 
-  // contentがない場合は
-  // imageを作品画像として自動表示
-  if (
-    contents.length === 0 &&
-    work.image
-  ) {
-
-    contents = [
-      {
-        type: "image",
-        src: work.image,
-        alt: work.title
-      }
-    ];
-
-  }
-
-
-  return contents
+  return content
     .map(item => {
 
-            const mainTypes =
+      const mainTypes =
         new Set([
           "image",
           "youtube",
           "niconico",
+          "soundcloud",
           "tiktok",
           "video",
           "audio"
@@ -207,39 +195,41 @@ function renderContent(
       }
 
 
-      // ------------------------
+      // ========================================
       // IMAGE
-      // ------------------------
+      // ========================================
 
       if (
         item.type === "image"
       ) {
 
         const src =
-          relativeURL(
-            workPage,
-            item.src
-          );
+          item.src ||
+          item.url ||
+          work.image ||
+          "";
+
 
         const alt =
           item.alt ||
-          work.title;
+          work.title ||
+          "";
+
 
         return `
           <img
-            class="work-detail-image"
-            src="${escapeHTML(src)}"
+            src="../${escapeHTML(src)}"
             alt="${escapeHTML(alt)}"
-            loading="lazy"
+            class="work-main-image"
           >
         `;
 
       }
 
 
-      // ------------------------
+      // ========================================
       // YOUTUBE
-      // ------------------------
+      // ========================================
 
       if (
         item.type === "youtube"
@@ -247,140 +237,153 @@ function renderContent(
 
         return `
           <div class="video-embed">
+
             <iframe
               src="https://www.youtube.com/embed/${escapeHTML(item.id)}"
               title="${escapeHTML(work.title)}"
               loading="lazy"
-              allow="
-                accelerometer;
-                autoplay;
-                clipboard-write;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-                web-share
-              "
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
+
           </div>
         `;
 
       }
 
-      // ------------------------
+
+      // ========================================
       // NICONICO
-      // ------------------------
-      
+      // ========================================
+
       if (
         item.type === "niconico"
       ) {
-      
+
         return `
           <div class="video-embed">
+
             <iframe
               src="https://embed.nicovideo.jp/watch/${escapeHTML(item.id)}"
               title="${escapeHTML(work.title)}"
               loading="lazy"
               allowfullscreen
             ></iframe>
+
           </div>
         `;
-      
+
       }
 
 
-      // ------------------------
+      // ========================================
+      // SOUNDCLOUD
+      // ========================================
+
+      if (
+        item.type === "soundcloud"
+      ) {
+
+        return `
+          <div class="soundcloud-embed">
+
+            <iframe
+              width="100%"
+              height="166"
+              scrolling="no"
+              frameborder="no"
+              allow="autoplay; encrypted-media"
+              src="${escapeHTML(item.embedUrl)}"
+              title="${escapeHTML(work.title)}"
+              loading="lazy"
+            ></iframe>
+
+          </div>
+        `;
+
+      }
+
+
+      // ========================================
       // TIKTOK
-      // ------------------------
+      // ========================================
 
       if (
         item.type === "tiktok"
       ) {
 
         return `
-          <div class="tiktok-player">
-            <iframe
-              src="https://www.tiktok.com/player/v1/${escapeHTML(item.id)}"
-              allow="fullscreen"
-              title="${escapeHTML(work.title)}"
-            ></iframe>
-          </div>
+          <blockquote
+            class="tiktok-embed"
+            cite="${escapeHTML(item.url)}"
+            data-video-id="${escapeHTML(item.id)}"
+          >
+          </blockquote>
         `;
 
       }
 
 
-      // ------------------------
+      // ========================================
       // VIDEO
-      // ------------------------
+      // ========================================
 
       if (
         item.type === "video"
       ) {
 
-        const src =
-          relativeURL(
-            workPage,
-            item.src
-          );
-
         return `
           <video
-            class="work-video"
             controls
-            playsinline
             preload="metadata"
+            class="work-video"
           >
+
             <source
-              src="${escapeHTML(src)}"
-              type="video/mp4"
+              src="../${escapeHTML(item.src)}"
             >
-            お使いのブラウザは動画再生に対応していません。
+
           </video>
         `;
 
       }
 
 
-      // ------------------------
+      // ========================================
       // AUDIO
-      // ------------------------
+      // ========================================
 
       if (
         item.type === "audio"
       ) {
 
-        const src =
-          relativeURL(
-            workPage,
-            item.src
-          );
-
         return `
           <audio
-            class="work-audio"
             controls
             preload="metadata"
+            class="work-audio"
           >
+
             <source
-              src="${escapeHTML(src)}"
+              src="../${escapeHTML(item.src)}"
             >
+
           </audio>
         `;
 
       }
 
 
-      // ------------------------
+      // ========================================
       // TEXT
-      // ------------------------
+      // ========================================
 
       if (
         item.type === "text"
       ) {
 
         return `
-          <p class="work-text">
+          <p>
             ${escapeHTML(item.text)}
           </p>
         `;
@@ -388,37 +391,20 @@ function renderContent(
       }
 
 
-      // ------------------------
-      // TEXT + LINK
-      // ------------------------
+      // ========================================
+      // TEXT-LINK
+      // ========================================
 
       if (
         item.type === "text-link"
       ) {
 
         return `
-          <p class="work-text">
-            ${escapeHTML(item.before || "")}<a
-              href="${escapeHTML(item.url)}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >${escapeHTML(item.label)}</a>${escapeHTML(item.after || "")}
-          </p>
-        `;
+          <p>
+            ${escapeHTML(
+              item.before || ""
+            )}
 
-      }
-
-
-      // ------------------------
-      // LINK
-      // ------------------------
-
-      if (
-        item.type === "link"
-      ) {
-
-        return `
-          <p class="work-external-link">
             <a
               href="${escapeHTML(item.url)}"
               target="_blank"
@@ -426,21 +412,50 @@ function renderContent(
             >
               ${escapeHTML(item.label)}
             </a>
+
+            ${escapeHTML(
+              item.after || ""
+            )}
           </p>
         `;
 
       }
 
 
-      // ------------------------
-      // 特殊HTML
-      // ------------------------
+      // ========================================
+      // LINK
+      // ========================================
+
+      if (
+        item.type === "link"
+      ) {
+
+        return `
+          <a
+            class="work-external-link"
+            href="${escapeHTML(item.url)}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ${escapeHTML(item.label)}
+          </a>
+        `;
+
+      }
+
+
+      // ========================================
+      // HTML
+      // ========================================
 
       if (
         item.type === "html"
       ) {
 
-        return item.html || "";
+        return (
+          item.html ||
+          ""
+        );
 
       }
 
@@ -448,7 +463,7 @@ function renderContent(
       return "";
 
     })
-    .join("\n");
+    .join("");
 
 }
 
