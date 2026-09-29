@@ -1047,9 +1047,12 @@ const works = [
         type: "niconico",
         id: "sm41579583",
       },
-      {
-        type: "text",
-        text: "動画を制作しました。\n\nLyric、Music、Mix、Vocal Edit：Monk",
+     {
+        type: "text-link",
+        before: "動画を制作しました。\n\nLyric、Music、Mix、Vocal Edit：Monk（",
+        label: "X",
+        url: "https://x.com/Monk052136241",
+        after: "）",
       },
       {
         type: "link",
