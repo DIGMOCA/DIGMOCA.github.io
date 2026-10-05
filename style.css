@@ -545,3 +545,30 @@ footer {
   max-width: 100%;
   border: 0;
 }
+
+/* ========================================
+   MANGA GALLERY
+======================================== */
+
+.manga-gallery {
+  width: 100%;
+  max-width: 900px;
+  margin: 32px auto;
+}
+
+.manga-page {
+  margin: 0 0 64px;
+}
+
+.manga-page-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.manga-page-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
