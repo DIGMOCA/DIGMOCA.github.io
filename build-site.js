@@ -167,7 +167,8 @@ function renderContent(
           "soundcloud",
           "tiktok",
           "video",
-          "audio"
+          "audio",
+          "manga-gallery"
         ]);
 
 
@@ -374,6 +375,62 @@ function renderContent(
       }
 
 
+// ========================================
+// MANGA GALLERY
+// ========================================
+
+if (
+  item.type === "manga-gallery"
+) {
+
+  const pages =
+    Array.isArray(item.pages)
+      ? item.pages
+      : [];
+
+  const pageHTML =
+    pages
+      .map((page, index) => {
+
+        const imageUrl =
+          `${item.baseUrl}${page.file}`;
+
+        const pageTitle =
+          page.title ||
+          `${index + 1}`;
+
+        return `
+          <section class="manga-page">
+
+            <h3 class="manga-page-title">
+              ${escapeHTML(pageTitle)}
+            </h3>
+
+            <img
+              src="${escapeHTML(imageUrl)}"
+              alt="${escapeHTML(
+                `${work.title} ${pageTitle}`
+              )}"
+              class="manga-page-image"
+              loading="lazy"
+            >
+
+          </section>
+        `;
+
+      })
+      .join("");
+
+  return `
+    <div class="manga-gallery">
+
+      ${pageHTML}
+
+    </div>
+  `;
+
+}
+      
 
 
       // ========================================
