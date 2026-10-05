@@ -390,27 +390,17 @@ if (
 
   const pageHTML =
     pages
-      .map((page, index) => {
+      .map(page => {
 
         const imageUrl =
           `${item.baseUrl}${page.file}`;
 
-        const pageTitle =
-          page.title ||
-          `${index + 1}`;
-
         return `
           <section class="manga-page">
 
-            <h3 class="manga-page-title">
-              ${escapeHTML(pageTitle)}
-            </h3>
-
             <img
               src="${escapeHTML(imageUrl)}"
-              alt="${escapeHTML(
-                `${work.title} ${pageTitle}`
-              )}"
+              alt="${escapeHTML(work.title)}"
               class="manga-page-image"
               loading="lazy"
             >
@@ -430,7 +420,6 @@ if (
   `;
 
 }
-      
 
 
       // ========================================
