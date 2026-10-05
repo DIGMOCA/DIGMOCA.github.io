@@ -838,6 +838,43 @@ const works = [
     ],
   },
 
+  {
+  id: "manga_1",
+  title: "1ページ漫画",
+  date: "2023-10-05",
+  categories: ["manga"],
+  series: [],
+  image: "images/manga_1.jpg",
+
+  content: [
+    {
+      type: "manga-gallery",
+
+      baseUrl:
+        "https://pub-a520b1aca3664bf2b2dd9e12a62ac98c.r2.dev/manga/1page-manga/",
+
+      pages: [
+        {
+          file: "001.png",
+          title: "記憶",
+        },
+        {
+          file: "002.png",
+          title: "02",
+        },
+        {
+          file: "003.png",
+          title: "03",
+        },
+        {
+          file: "004.png",
+          title: "04",
+        },
+      ],
+    },
+  ],
+},
+
         {
     id: "illust_piapro_2",
     title: "1回しかしませんのでよーく見ててください。",
