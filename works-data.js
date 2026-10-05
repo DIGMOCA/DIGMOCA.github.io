@@ -856,19 +856,15 @@ const works = [
       pages: [
         {
           file: "001.png",
-          title: "",
         },
         {
           file: "002.png",
-          title: "",
         },
         {
           file: "003.png",
-          title: "",
         },
         {
           file: "004.png",
-          title: "",
         },
       ],
     },
