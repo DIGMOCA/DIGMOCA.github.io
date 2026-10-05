@@ -567,3 +567,10 @@ footer {
   height: auto;
   margin: 0 auto;
 }
+
+.manga-page-date {
+  margin: 8px 0 0;
+  text-align: right;
+  font-size: 14px;
+  color: #666;
+}
