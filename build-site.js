@@ -395,6 +395,15 @@ if (
         const imageUrl =
           `${item.baseUrl}${page.file}`;
 
+        const dateHTML =
+          page.date
+            ? `
+              <p class="manga-page-date">
+                ${escapeHTML(page.date)}
+              </p>
+            `
+            : "";
+
         return `
           <section class="manga-page">
 
@@ -404,6 +413,8 @@ if (
               class="manga-page-image"
               loading="lazy"
             >
+
+            ${dateHTML}
 
           </section>
         `;
@@ -420,7 +431,6 @@ if (
   `;
 
 }
-
 
       // ========================================
       // TEXT
