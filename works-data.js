@@ -856,15 +856,19 @@ const works = [
       pages: [
         {
           file: "001.png",
+          date: "2023-10-05",
         },
         {
           file: "002.png",
+          date: "2023-10-16",
         },
         {
           file: "003.png",
+          date: "2023-10-24",
         },
         {
           file: "004.png",
+          date: "2026-04-20",
         },
       ],
     },
