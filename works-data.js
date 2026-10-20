@@ -247,7 +247,7 @@ const works = [
     title: "閲覧注意！挨拶大戦争 / 東北きりたん",
     date: "2025-11-21",
     categories: ["music"],
-    series: ["VOCALOID楽曲", "オリジナル曲ε"],
+    series: ["VOCALOID楽曲", "オリジナル曲ε", "無色透名祭"],
     image: "images/vocaloid_11.jpg",
 
           content: [
@@ -742,7 +742,7 @@ const works = [
     title: "サイクロン真拳 / 初音ミク, 鏡音レン",
     date: "2023-11-02",
     categories: ["music"],
-    series: ["VOCALOID楽曲", "オリジナル曲γ"],
+    series: ["VOCALOID楽曲", "オリジナル曲γ", "無色透名祭"],
     image: "images/vocaloid_6.jpg",
 
           content: [
