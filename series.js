@@ -1,3 +1,4 @@
+
 const seriesList =
   document.getElementById(
     "series-list"
@@ -97,83 +98,55 @@ works.forEach(work => {
 
 // ========================================
 // シリーズ順
+// series-data.jsの記載順を使用
 // ========================================
 
-const seriesOrderMap = {};
+// series-data.jsに登録されたシリーズを
+// 記載順のまま取得する
 
-
-seriesData.forEach(series => {
-
-  seriesOrderMap[
-    series.name
-  ] =
-    Number(series.order);
-
-});
-
-
-const seriesNames =
-  Object.keys(
-    worksBySeries
+const registeredSeriesNames =
+  seriesData.map(
+    series => series.name
   );
 
 
-seriesNames.sort(
-  (a, b) => {
+// 作品が存在するシリーズだけを表示する
 
-    const hasA =
+const seriesNames =
+  registeredSeriesNames.filter(
+    seriesName =>
       Object.prototype
         .hasOwnProperty.call(
-          seriesOrderMap,
-          a
-        );
-
-    const hasB =
-      Object.prototype
-        .hasOwnProperty.call(
-          seriesOrderMap,
-          b
-        );
+          worksBySeries,
+          seriesName
+        )
+  );
 
 
-    if (
-      hasA &&
-      hasB
-    ) {
+// series-data.jsに未登録のシリーズは
+// 登録済みシリーズの後ろに追加する
 
-      const difference =
-        seriesOrderMap[a] -
-        seriesOrderMap[b];
-
-
-      if (
-        difference !== 0
-      ) {
-
-        return difference;
-
-      }
-
-
-      return a.localeCompare(
+const unregisteredSeriesNames =
+  Object.keys(
+    worksBySeries
+  )
+  .filter(
+    seriesName =>
+      !registeredSeriesNames.includes(
+        seriesName
+      )
+  )
+  .sort(
+    (a, b) =>
+      a.localeCompare(
         b,
         "ja"
-      );
-
-    }
-
-
-    if (hasA) return -1;
-
-    if (hasB) return 1;
+      )
+  );
 
 
-    return a.localeCompare(
-      b,
-      "ja"
-    );
-
-  }
+seriesNames.push(
+  ...unregisteredSeriesNames
 );
 
 
