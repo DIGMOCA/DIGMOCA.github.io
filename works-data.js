@@ -73,6 +73,32 @@ const works = [
       },
     ],
   },
+
+        {
+    id: "vocaloid_13",
+    title: "世界の名所_観光案内ダイジェスト / 宮舞モカ",
+    date: "2026-11-20",
+    categories: ["music"],
+    series: ["VOCALOID楽曲", "オリジナル曲α", "無色透名祭"],
+    image: "images/vocaloid_13.jpg",
+
+          content: [
+      {
+        type: "niconico",
+        id: "so46888946",
+      },
+      {
+        type: "text",
+        text: "無色透名祭４参加曲です。",
+      },
+      {
+        type: "link",
+        label: "ニコニコ動画",
+        url: "https://www.nicovideo.jp/watch/so46888946",
+      },
+    ],
+  },
+
   
   {
     id: "musyokutoumei3_5",
