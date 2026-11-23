@@ -677,13 +677,7 @@ const detailContent =
 
 const extensionHTML =
   extensionContent
-    ? `
-      <section class="work-extension" style="white-space: pre-wrap; overflow-wrap: anywhere;">
-
-        ${extensionContent}
-
-      </section>
-    `
+    ? `<section class="work-extension" style="white-space: pre-wrap; overflow-wrap: anywhere;">${extensionContent}</section>`
     : "";
 
 
