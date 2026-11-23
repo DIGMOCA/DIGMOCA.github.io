@@ -678,7 +678,7 @@ const detailContent =
 const extensionHTML =
   extensionContent
     ? `
-      <section class="work-extension">
+      <section class="work-extension" style="white-space: pre-wrap; overflow-wrap: anywhere;">
 
         ${extensionContent}
 
@@ -776,8 +776,7 @@ ${ogImageHTML}
       
       </div>
       
-      ${extensionHTML}
-      
+       
       ${detailContent
         ? `
           <div class="work-content work-details">
@@ -788,6 +787,8 @@ ${ogImageHTML}
         `
         : ""
       }
+
+     ${extensionHTML}
       
       </article>
       
