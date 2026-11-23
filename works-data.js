@@ -1,6 +1,80 @@
 const works = [
 
   {
+    id: "musyokutoumei4_2",
+    title: "【無色透名美術館】人生って音楽らしい。",
+    date: "2026-11-23",
+    categories: ["illustration"],
+    series: ["無色透名美術館", "ファンアート"],
+    image: "images/musyokutoumei4_2.jpg",
+
+     content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei4_2.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭４で投稿された「人生って音楽らしい。 / 音街ウナ」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so46893692",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "pixiv",
+        url: "https://www.pixiv.net/artworks/152413738",
+      },
+      {
+        type: "link",
+        label: "無色透名祭４",
+        url: "https://site.nicovideo.jp/mushokutomeisai/",
+      },
+    ],
+  },
+  
+  {
+    id: "musyokutoumei4_1",
+    title: "【無色透名美術館】OVER:WHITE",
+    date: "2026-11-23",
+    categories: ["illustration"],
+    series: ["無色透名美術館", "ファンアート"],
+    image: "images/musyokutoumei4_1.jpg",
+
+     content: [
+      {
+        type: "image",
+        src: "images/musyokutoumei4_1.jpg",
+      },
+      {
+        type: "text",
+        text: "無色透名祭４で投稿された「OVER:WHITE / 知声」のファンアートです。",
+      },
+      {
+        type: "text-link",
+        before: "素敵な楽曲は",
+        label: "こちら",
+        url: "https://www.nicovideo.jp/watch/so46894014",
+        after: "",
+      },
+      {
+        type: "link",
+        label: "pixiv",
+        url: "https://www.pixiv.net/artworks/152413293",
+      },
+      {
+        type: "link",
+        label: "無色透名祭４",
+        url: "https://site.nicovideo.jp/mushokutomeisai/",
+      },
+    ],
+  },
+  
+  {
     id: "musyokutoumei3_5",
     title: "【無色透名美術館】ひ　い　　て　　　い　　　　く　　　　　　。",
     date: "2026-07-23",
