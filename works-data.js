@@ -96,6 +96,11 @@ const works = [
         label: "ニコニコ動画",
         url: "https://www.nicovideo.jp/watch/so46888946",
       },
+      {
+        type: "link",
+        label: "Youtube",
+        url: "https://youtu.be/rgvCmhpMSZU?si=VDgyvJ5A6ndLSWf3",
+      },
     ],
   },
 
